@@ -10,7 +10,7 @@ This document tracks bugs and inconsistencies discovered by QueryHouse..
 | 2 | SQLite | `REAL` constant doubles | Fixed | [🔗](https://sqlite.org/forum/info/a81507e93557394e) |
 | 3 | SQLite | `ROUND` function overflow | Fixed | [🔗](https://sqlite.org/forum/forumpost/170aeab92a) |
 | 4 | SQLite | `SUBSTR` function overflow | Fixed | [🔗](https://sqlite.org/forum/forumpost/bfbb7d11c4) |
-| 5 | MySQL | `BETWEEN` operator precedence mismatch | Fixed | [🔗](http://bugs.mysql.com/116765) |
+| 5 | MySQL | `BETWEEN` operator precedence mismatch | Verified | [🔗](http://bugs.mysql.com/116765) |
 | 6 | MySQL | IN operator precedence mismatch | Verified | [🔗](http://bugs.mysql.com/117017) |
 | 7 | MySQL | MAX as window aggregate returns NULL | Fixed | [🔗](http://bugs.mysql.com/117072) |
 | 8 | MariaDB | BETWEEN operator precedence mismatch | Fixed | [🔗](https://jira.mariadb.org/browse/MDEV-35685) |
@@ -25,7 +25,7 @@ This document tracks bugs and inconsistencies discovered by QueryHouse..
 | ID | DBMSs | Feature | Description |
 | --- | --- | --- | --- |
 | 1 | All | Comparison between textual and numeric data | [🔗](./incon1.md) Some DBMSs allow implicit comparison between strings and numbers, others throw errors. |
-| 2 | All | Rounding in `CAST AS INT` | [🔗](./incon2.md) Behavior of casting floats to integers varies: some truncate, others round. |
+| 2 | All | Rounding in `CAST AS INT` | <!-- [🔗](./incon2.md) --> Behavior of casting floats to integers varies: some truncate, others round. |
 | 3 | All | Return type of division | <!-- [🔗](./incon3.md) --> Integer division returns different types—float or integer—depending on the DBMS. |
 | 4 | MySQL, MariaDB | `FULL JOIN`/`FULL OUTER JOIN` | <!-- [🔗](./incon4.md) --> MySQL does not support `FULL OUTER JOIN` natively unlike other DBMSs. |
 | 5 | MySQL | Precision of `JSON DOUBLE` | <!-- [🔗](./incon5.md) --> `DOUBLE` values in JSON may lose precision when serialized or queried. |
@@ -37,5 +37,5 @@ This document tracks bugs and inconsistencies discovered by QueryHouse..
 ## Statistics
 
 - **Total Bugs Found**: 11
-- **Verified/Fixed**: 11 / 7
+- **Verified/Fixed**: 11 / 6
 - **Total Inconsistencies**: 8
