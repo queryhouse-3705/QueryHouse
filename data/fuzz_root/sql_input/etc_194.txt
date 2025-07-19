@@ -1,0 +1,1 @@
+CREATE TABLE t0 (i0 INTEGER PRIMARY KEY, c0 TEXT, json_col JSON); INSERT INTO t0 (i0, c0, json_col) VALUES (1, 'v0 example', '{"key": "value1"}'), (2, 'v1 test', '{"key": "value2"}'); SELECT i0, json_col -> '$.key' AS extracted_key FROM t0 WHERE c0 LIKE '%example%';

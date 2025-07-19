@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 INTEGER); INSERT INTO t0 (c0, c1) VALUES (10, 3), (20, 5), (5, 2), (15, -1), (25, 4); SELECT c0, c1, MIN(c0 + -c1) OVER (ORDER BY c0) AS min_binary_unary FROM t0;

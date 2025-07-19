@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 TEXT, c3 VARCHAR(50)); INSERT INTO t0 (c1, c2, c3) VALUES (42, 'symbols@!', 'email@example.com'), (7, 'hash#tag', 'website#123'), (13, 'percent%', 'value%of'); SELECT c2, c3 FROM t0 WHERE c2 LIKE '%@!'; SELECT c1 FROM t0 WHERE c3 LIKE '%value%';

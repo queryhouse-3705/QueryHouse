@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 VARCHAR(10)); INSERT INTO t0 (c0, c1, c2) VALUES (100, 1.01, 'alpha'), (200, -2.02, 'beta'), (300, 3.03, 'alpha'), (400, -4.04, 'gamma'), (500, 5.05, 'beta'); SELECT nth_value(c1 * 2, 1) OVER (PARTITION BY c2 ORDER BY c0 ROWS BETWEEN 2 PRECEDING AND 1 FOLLOWING) AS dynamic_sum FROM t0;

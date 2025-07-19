@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 VARCHAR(50), c1 FLOAT); INSERT INTO t0 (c0, c1) VALUES ('Group1', 15.75), ('Group1', -25.5), ('Group2', 0.0001), ('Group2', 45000.55); SELECT c0, c1, AVG(c1) OVER(PARTITION BY c0) AS avg_group FROM t0;

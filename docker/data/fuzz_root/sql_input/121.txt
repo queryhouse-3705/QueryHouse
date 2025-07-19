@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 INTEGER); INSERT INTO t0 (c0, c1) VALUES ('10', 1), ('20', 1), ('5', 2), ('15', 2), ('25', 3); SELECT c0, c1, SUM(CAST(c0 AS INTEGER)) OVER (PARTITION BY c1 ORDER BY c0) AS sum_cast_partition FROM t0;

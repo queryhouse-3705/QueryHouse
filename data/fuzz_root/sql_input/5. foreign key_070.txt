@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 TEXT, c3 TEXT); INSERT INTO t0 (c1, c2, c3) VALUES (1, 'chapter-1', 'introduction'), (2, 'chapter-2', 'methods'), (3, 'chapter-3', 'results'); SELECT c3 FROM t0 WHERE c2 LIKE '%chapter-2'; SELECT c1 FROM t0 WHERE c3 LIKE '%introduction';

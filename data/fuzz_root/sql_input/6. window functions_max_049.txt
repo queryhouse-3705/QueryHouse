@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 FLOAT); INSERT INTO t0 (c0, c1) VALUES ('alpha', 0.01), ('beta', -0.02), ('gamma', 0.03), ('delta', -0.04), ('epsilon', 0.05); SELECT c0, c1, MAX(c1) OVER (PARTITION BY LENGTH(c0) ORDER BY c1 ASC RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS max_text_float FROM t0;

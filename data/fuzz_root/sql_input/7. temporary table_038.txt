@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(100), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (3, 'v0', 0.333), (6, 'v1', -0.666), (9, 'v2', 0.999); SELECT c1, c0 % 3 AS mod_result, c2 * 3 AS scaled_value FROM t0 WHERE c2 > 0;

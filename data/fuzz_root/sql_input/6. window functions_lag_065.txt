@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 VARCHAR(10)); INSERT INTO t0 (c0, c1, c2) VALUES (1, 10.0, 'Group1'), (2, 20.0, 'Group2'), (3, 30.0, 'Group1'), (4, 40.0, 'Group2'), (5, 50.0, 'Group3'); SELECT c0, c1, c2, LAG(c1) OVER (PARTITION BY c2 || '-' || CASE WHEN c1 > 20 THEN 'High' ELSE 'Low' END ORDER BY c1 ASC) AS lag_cross_partition FROM t0;

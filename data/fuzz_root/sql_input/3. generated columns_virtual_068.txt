@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (CASE WHEN RTRIM(c0) LIKE '%_end' THEN 'ends_with_end' ELSE 'not_matching' END) VIRTUAL); INSERT INTO t0 (c0) VALUES ('end_case'), ('start_case'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 LIKE '%_end'; SELECT c1 FROM t0 WHERE c0 = 'start_case';

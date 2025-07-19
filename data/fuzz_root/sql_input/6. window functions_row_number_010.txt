@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 TEXT, c2 DOUBLE); INSERT INTO t0 (c0, c1, c2) VALUES (10, 'group1', 0.1), (20, 'group2', 0.2), (30, 'group1', 0.3), (40, 'group2', 0.4); SELECT c0, c1, c2, ROW_NUMBER() OVER (PARTITION BY c1 ORDER BY c2 ASC, c0 DESC) AS rn FROM t0;

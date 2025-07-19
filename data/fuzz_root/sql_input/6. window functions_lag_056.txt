@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 FLOAT, c3 VARCHAR(10)); INSERT INTO t0 (c0, c1, c2, c3) VALUES (1, 10.0, 20.0, 'A'), (2, -5.0, -10.0, 'B'), (3, 15.0, 30.0, 'A'), (4, -20.0, -40.0, 'B'), (5, 50.0, 100.0, 'C'); SELECT c0, c1, c2, c3, LAG(CASE WHEN c3 = 'A' THEN c1 ELSE c2 END) OVER (PARTITION BY c3 ORDER BY c1 ASC) AS lag_dynamic_column_sort FROM t0;

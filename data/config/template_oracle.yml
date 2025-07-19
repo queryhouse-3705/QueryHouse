@@ -1,0 +1,21 @@
+---
+required:
+    [
+        "init_lib",
+        "data_lib",
+        "db",
+        "passwd",
+        "user_name",
+        "db_name",
+        "startup_cmd",
+    ]
+init_lib: ${REPO_ROOT}/data/fuzz_root/oracle_init_lib
+data_lib: ${REPO_ROOT}/data/fuzz_root/global_data_lib_oracle
+db: oracle
+host: ${ORACLE_HOST} 
+port: 1539
+service: FREE
+user_name: system
+passwd: password
+db_prefix: test
+startup_cmd: ""

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 TEXT, c3 VARCHAR(30)); INSERT INTO t0 (c1, c2, c3) VALUES (2147483647, 'largeint', 'stringA'), (-2147483648, 'smallint', 'stringB'), (0, 'zero', 'stringC'); SELECT c1, c2 FROM t0 WHERE c3 LIKE 'string%'; SELECT c3 FROM t0 WHERE c1 = 0;

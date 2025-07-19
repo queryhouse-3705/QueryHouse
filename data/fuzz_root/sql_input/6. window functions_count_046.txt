@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 TEXT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'Alpha', 0.1), (2, 'Beta', -0.2), (3, 'Alpha', 1.5), (4, 'Gamma', -1.5); SELECT c0, c1, c2, COUNT(*) OVER (PARTITION BY c1 ORDER BY ABS(c2)) AS abs_partition_count, COUNT(*) OVER (PARTITION BY c2 > 0) AS positive_negative_split FROM t0;

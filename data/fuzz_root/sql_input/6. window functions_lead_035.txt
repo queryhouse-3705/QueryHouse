@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 DOUBLE, c1 VARCHAR(100), c2 INTEGER); INSERT INTO t0 (c0, c1, c2) VALUES (-1000.5, 'v0', 1), (0.0, 'v1', 2), (1000.5, 'v2', 3); SELECT c0, c1, LEAD(c1, 3, 'default') OVER (ORDER BY c0) AS lead_value FROM t0;

@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(60), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'v0', 0.001), (-1, 'v1', -0.002), (2, 'v2', 0.003); SELECT SUM(c2) OVER (ORDER BY c0) AS running_sum FROM t0;

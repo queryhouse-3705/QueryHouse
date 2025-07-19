@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 VARCHAR(10), c3 INTEGER); INSERT INTO t0 (c0, c1, c2, c3) VALUES (1, 10.0, 'A', 1), (2, -20.0, 'B', 2), (3, 30.0, 'A', 1), (4, -40.0, 'B', 3), (5, 50.0, 'C', 2); SELECT c0, c1, c2, c3, LAST_VALUE(c1) OVER (PARTITION BY c2, c3 % 2 ORDER BY c1 ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS last_value_multilevel_partition FROM t0;

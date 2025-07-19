@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 TEXT, c2 FLOAT, c3 INT); INSERT INTO t0 (c0, c1, c2, c3) VALUES (1, 'X', -0.001, 10), (2, 'Y', 999.999, 20), (3, 'Z', 12345.678, 10), (4, 'W', -98765.432, 30); SELECT c0, c1, c2, c3, CUME_DIST() OVER (PARTITION BY c3 ORDER BY ABS(c2), c0 DESC) AS multi_partition_dist FROM t0;

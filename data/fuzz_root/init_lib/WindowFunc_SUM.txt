@@ -1,0 +1,10 @@
+SELECT department,SUM(salary) OVER(PARTITION BY department) AS total_salary_by_department FROM employees;
+SELECT SUM(salary) OVER(ORDER BY hire_date) AS cumulative_salary_over_time FROM employees;
+SELECT department,SUM(bonus) OVER(PARTITION BY department ORDER BY hire_date) AS cumulative_bonus_by_department_over_time FROM employees;
+SELECT SUM(price) OVER(PARTITION BY category) AS total_price_by_category FROM products;
+SELECT SUM(score) OVER(ORDER BY exam_date ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS rolling_total_score FROM exam_scores;
+SELECT department,SUM(hours_worked) OVER(PARTITION BY department RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS total_hours_worked_by_department FROM timesheets;
+SELECT SUM(revenue) OVER(PARTITION BY year ORDER BY month) AS cumulative_revenue_over_months FROM monthly_revenues;
+SELECT department,SUM(project_cost) OVER(PARTITION BY department ROWS BETWEEN UNBOUNDED PRECEDING AND 1 FOLLOWING) AS total_project_cost_within_department FROM projects;
+SELECT SUM(order_total) OVER(ORDER BY order_date RANGE BETWEEN INTERVAL '1' MONTH PRECEDING AND CURRENT ROW) AS total_order_last_month FROM orders;
+SELECT SUM(rating) OVER(PARTITION BY category ORDER BY submission_date DESC) AS total_rating_by_category FROM reviews;

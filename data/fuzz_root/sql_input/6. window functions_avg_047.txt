@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 FLOAT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 10, 2), (2, 20, 4), (3, 30, 6), (4, 40, 8); SELECT c0, c1, c2, AVG(c1 / c2) OVER() AS avg_ratio FROM t0;

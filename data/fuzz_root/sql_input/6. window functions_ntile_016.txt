@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 TEXT); INSERT INTO t0 VALUES (1, 1000.1, 'v0'), (2, 1000.2, 'v1'), (3, 1000.3, 'v2'), (4, 1000.4, 'v3'), (5, 1000.5, 'v4'); SELECT c0, c1, NTILE(3) OVER (ORDER BY CEIL(c1 / 500)) AS ntile_rank FROM t0;

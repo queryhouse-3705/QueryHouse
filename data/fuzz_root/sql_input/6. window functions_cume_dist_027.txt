@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 VARCHAR(10)); INSERT INTO t0 (c0, c1, c2) VALUES (1, 10.5, 'v0'), (2, 20.1, 'v1'), (3, 15.7, 'v2'); SELECT c0, c1, c2, CUME_DIST() OVER (ORDER BY c1 ASC, c2 DESC) AS dist FROM t0;

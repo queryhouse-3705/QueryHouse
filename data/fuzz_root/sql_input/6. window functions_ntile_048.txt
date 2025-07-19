@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 DOUBLE, c2 TEXT); INSERT INTO t0 VALUES (1, 12345.6789, 'v0_pi'), (2, -12345.6789, 'v1_neg_pi'), (3, 3.14159, 'v2_e'), (4, -3.14159, 'v3_neg_e'), (5, 1.61803, 'v4_phi'); SELECT c0, c1, NTILE(3) OVER (PARTITION BY MOD(c0, 2) ORDER BY POWER(c1, 3) NULLS FIRST) AS ntile_rank FROM t0;

@@ -1,0 +1,10 @@
+SELECT employee_id,salary,LAST_VALUE(salary) OVER(ORDER BY salary) AS last_salary FROM employees;
+SELECT department,LAST_VALUE(salary) OVER(PARTITION BY department ORDER BY salary RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS last_salary_by_department FROM employees;
+SELECT employee_id,bonus,LAST_VALUE(bonus) OVER(ORDER BY bonus DESC) AS last_bonus FROM employees;
+SELECT department,LAST_VALUE(sales_amount) OVER(PARTITION BY region ORDER BY sales_date RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS last_sales_in_region FROM sales;
+SELECT product_id,price,LAST_VALUE(price) OVER(PARTITION BY category ORDER BY price) AS last_price_by_category FROM products;
+SELECT department,LAST_VALUE(years_of_experience) OVER(PARTITION BY department ORDER BY hire_date RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS last_experience_by_department FROM employees;
+SELECT student_id,score,LAST_VALUE(score) OVER(PARTITION BY class ORDER BY exam_date DESC RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) AS last_score_in_class FROM exam_scores;
+SELECT customer_id,order_total,LAST_VALUE(order_total) OVER(PARTITION BY customer_id ORDER BY order_date ASC RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS last_order_total FROM orders;
+SELECT department,LAST_VALUE(performance_rating) OVER(PARTITION BY department ORDER BY review_date RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS last_performance_rating_by_department FROM employee_reviews;
+SELECT project_id,project_duration,LAST_VALUE(project_duration) OVER(ORDER BY project_duration RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS last_project_duration FROM projects;

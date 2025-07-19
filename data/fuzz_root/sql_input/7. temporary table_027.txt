@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(20), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (0, 'v0', 0.001), (10, 'v1', -0.01), (-100, 'v2', 0.1); SELECT c1, c2 * c0 AS product FROM t0 WHERE c0 >= 10;

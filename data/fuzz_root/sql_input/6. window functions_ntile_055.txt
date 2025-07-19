@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 TEXT); INSERT INTO t0 VALUES (1, -999.99, 'v0_alpha'), (2, 888.88, 'v1_beta'), (3, -777.77, 'v2_gamma'), (4, 666.66, 'v3_delta'), (5, 0.0, 'v4_epsilon'); SELECT c0, c1, NTILE(4) OVER (PARTITION BY ABS(c0 % 2) ORDER BY CEIL(c1 / 100) DESC, LENGTH(c2) * 2) AS ntile_rank FROM t0;

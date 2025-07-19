@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 VARCHAR(50), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'A', 0.5), (2, 'B', -0.5), (3, 'A', 1.5), (4, 'C', -1.5); SELECT c1, COUNT(*) OVER (PARTITION BY c2 > 0 ORDER BY c1) AS positive_negative_split FROM t0;

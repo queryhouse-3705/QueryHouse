@@ -1,0 +1,1 @@
+drop view v0; CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 VARCHAR(100)); INSERT INTO t0 VALUES (3, 3.33, 'v0'), (6, -6.66, 'v1'), (9, 9.99, 'v2'); CREATE VIEW v0 AS SELECT c1, c2 FROM t0 WHERE c0 % 3 = 0 AND c1 * c0 > 20; SELECT * FROM v0;

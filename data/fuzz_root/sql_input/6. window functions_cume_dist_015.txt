@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 FLOAT, c2 TEXT); INSERT INTO t0 (c0, c1, c2) VALUES (-1000000, -0.00001, 'Alpha'), (5000000, 123456.789, 'Beta'), (-99999, 0.01, 'Gamma'), (9999999, -123456.123, 'Delta'); SELECT c1, c2, CUME_DIST() OVER (ORDER BY ABS(c1) DESC) AS abs_order_dist FROM t0;

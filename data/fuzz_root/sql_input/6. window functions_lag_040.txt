@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT); INSERT INTO t0 (c0, c1) VALUES (1, NULL), (2, 100.0), (3, NULL), (4, 200.0), (5, NULL); SELECT c0, c1, LAG(COALESCE(c1, -999.99)) OVER (ORDER BY c0 ASC) AS lag_with_null_handling FROM t0;

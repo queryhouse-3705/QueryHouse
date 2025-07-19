@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 VARCHAR(5), c3 DOUBLE); INSERT INTO t0 (c0, c1, c2, c3) VALUES (1, 3.14, 'x', 100.0), (2, 2.71, 'y', 200.0), (3, 1.62, 'x', 300.0), (4, 1.41, 'z', 400.0), (5, 0.99, 'y', 500.0); SELECT c3 / nth_value(c1, 2) OVER (PARTITION BY c2 ORDER BY c0) AS result FROM t0;

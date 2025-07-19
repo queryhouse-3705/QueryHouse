@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(15), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (7, 'v0', 3.14159), (-7, 'v1', -2.71828), (0, 'v2', 1.61803); SELECT c0, c1, SIN(c2) + COS(c2) AS trig_sum FROM t0 WHERE c0 <> 0;

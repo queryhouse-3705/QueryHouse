@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(15), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (50, 'v0', 5.5), (-100, 'v1', -10.1), (150, 'v2', 15.2); SELECT c1, ABS(c2) + (c0 / 10) AS aggregate_result FROM t0 WHERE c0 * c2 < 0;

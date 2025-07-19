@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 TEXT); INSERT INTO t0 VALUES (-10, -123.4, 'v0'), (-20, -234.5, 'v1'), (-30, -345.6, 'v2'), (-40, -456.7, 'v3'), (-50, -567.8, 'v4'); SELECT c0, c1, NTILE(4) OVER (PARTITION BY MOD(c0, 3) ORDER BY FLOOR(c1)) AS ntile_rank FROM t0;

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 FLOAT); INSERT INTO t0 (c0, c1) VALUES (1, 50.5), (2, -25.25), (3, 75.75), (4, -10); SELECT c0, c1, AVG(c1 + c0 * 10) OVER() AS avg_with_calculation FROM t0;

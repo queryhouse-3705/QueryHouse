@@ -1,0 +1,161 @@
+FOREIGN		 
+REFERENCES	 
+// ACTION		 
+JSON		 
+STORED       
+VIRTUAL      
+RECURSIVE    
+MATCH        
+WINDOW       
+OVER         
+FILTER       
+TEMPORARY    
+// TEMP         
+// DEALLOCATE	
+// PARAMETERS	
+INTERSECT	
+// TIMESTAMP	
+// DESCRIBE	
+DISTINCT	
+// RESTRICT	
+BETWEEN		
+CASCADE		
+// COLUMNS		
+// CONTROL		
+DEFAULT		
+INTEGER		
+NATURAL		
+PRIMARY		
+// SCHEMAS		
+VARCHAR		
+BEFORE		
+COLUMN		
+CREATE		
+DELETE		
+// DIRECT		
+DOUBLE		
+// ESCAPE		
+EXCEPT		
+EXISTS		
+EXTRACT 	
+// GLOBAL		
+HAVING		
+// IMPORT		
+INSERT		
+// ISNULL		
+// OFFSET		
+RENAME		
+// SCHEMA		
+SELECT		
+// SORTED		
+// TABLES		
+UNIQUE		
+// UNLOAD		
+UPDATE		
+VALUES		
+AFTER		
+ALTER		
+// ARRAY		
+CROSS		
+// DELTA		
+FLOAT		
+GROUP		
+INDEX		
+INNER		
+LIMIT		
+// LOCAL		
+// MERGE		
+MINUS		
+ORDER		
+OUTER		
+RIGHT		
+TABLE		
+UNION		
+USING		
+WHERE		
+// CALL		
+CASE		
+CHAR		
+// DATE		
+DESC		
+DROP		
+ELSE		
+// FILE		
+FROM		
+// FULL		
+HASH		
+INTO		
+JOIN		
+LEFT		
+LIKE		
+// LOAD		
+// LONG		
+NULL		
+// PLAN		
+// SHOW		
+TEXT		
+THEN		
+// TIME		
+VIEW		
+WHEN		
+WITH		
+ADD			
+ALL			
+AND			
+ASC			
+// CSV			
+// END			
+FOR			
+INT			
+KEY			
+NOT			
+OFF			
+SET
+// TBL			
+TOP			
+AS			
+BY			
+IF			
+IN			
+IS			
+OF			
+ON			
+OR			
+TO			
+// SECOND      
+// MINUTE      
+// HOUR        
+// DAY         
+// MONTH       
+// YEAR        
+// INDEXED		
+GENERATED ALWAYS		
+CHECK		
+// BEGIN		
+// TRIGGER		
+EACH		
+ROW			
+CURRENT		
+// EXCLUDE		
+FOLLOWING	
+GROUPS		
+NO			
+OTHERS		
+PRECEDING	
+RANGE		
+ROWS		
+// TIES		
+UNBOUNDED	
+// PARTITION	
+// DATABASE	
+CAST		
+// COMMIT 		
+NOTHING 	
+NULLS 		
+LAST 		
+FIRST 		
+// DO 			
+COLLATE 	
+
+// --- manually added ---
+JOIN

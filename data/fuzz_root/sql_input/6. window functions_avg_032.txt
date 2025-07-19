@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 VARCHAR(50), c1 INT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES ('SetA', 1, 100.5), ('SetA', 2, -200.75), ('SetB', 1, 300.99), ('SetB', 2, 400.01); SELECT c0, c1, c2, AVG(c2) OVER(PARTITION BY c0, c1) AS avg_group_partition FROM t0;

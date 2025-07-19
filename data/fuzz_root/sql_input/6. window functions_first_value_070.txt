@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 VARCHAR(20)); INSERT INTO t0 (c0, c1) VALUES (1, 'short'), (2, 'mediumlength'), (3, 'longlongerlongest'), (4, 'tiny'), (5, 'large'); SELECT c0, c1, FIRST_VALUE(c1) OVER (ORDER BY LENGTH(c1) ASC) AS shortest_string FROM t0;

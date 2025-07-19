@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (UPPER(SUBSTRING(c0, 2, 4)) || '_CHECKED') VIRTUAL); INSERT INTO t0 (c0) VALUES ('test_value'), ('value_test'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'test_value'; SELECT c1 FROM t0 WHERE c0 = 'value_test';

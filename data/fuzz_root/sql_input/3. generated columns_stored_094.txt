@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (RTRIM(c0 || '_extra')) STORED); INSERT INTO t0 (c0) VALUES ('example'); INSERT INTO t0 (c0) VALUES ('test'); INSERT INTO t0 (c0) VALUES ('demo'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'example'; SELECT c1 FROM t0 WHERE c0 = 'test';

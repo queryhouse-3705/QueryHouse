@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(50), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'v0', 0.1), (-1, 'v1', 0.2), (2, 'v2', -0.3); SELECT c1, c2 * IFNULL(c0, 1) AS adjusted_value FROM t0 WHERE c0 IS NOT NULL;

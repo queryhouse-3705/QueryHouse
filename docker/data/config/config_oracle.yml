@@ -1,0 +1,21 @@
+---
+required:
+    [
+        "init_lib",
+        "data_lib",
+        "db",
+        "passwd",
+        "user_name",
+        "db_name",
+        "startup_cmd",
+    ]
+init_lib: /home/Squirrel/data/fuzz_root/oracle_init_lib
+data_lib: /home/Squirrel/data/fuzz_root/global_data_lib_oracle
+db: oracle
+host: localhost
+port: 1539
+service: FREE
+user_name: system
+passwd: password
+db_prefix: test
+startup_cmd: ""

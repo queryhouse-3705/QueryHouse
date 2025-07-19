@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 JSON); INSERT INTO t0 (c0) VALUES ('{"k0": null, "k1": 15}'), ('{"k0": "v0", "k1": 5}'); SELECT c0 -> '$.k0' FROM t0 WHERE c0 -> '$.k0' IS NULL OR c0 -> '$.k1' >= '10';

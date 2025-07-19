@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (CASE WHEN c0 LIKE '%temp%' THEN REPLACE(c0, 'temp', 'perm') ELSE c0 END) VIRTUAL); INSERT INTO t0 (c0) VALUES ('temporary'), ('permanent'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 LIKE '%temp%'; SELECT c1 FROM t0 WHERE c0 = 'permanent';

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 10.0, 0.1), (2, -20.0, 0.2), (3, 30.0, 0.3), (4, -40.0, 0.4), (5, 50.0, 0.5); SELECT c0, c1, c2, LAST_VALUE(c1 + c2 * CASE WHEN c1 < 0 THEN 2 ELSE 0.5 END) OVER (ORDER BY c1 ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING) AS last_value_conditional_combined FROM t0;

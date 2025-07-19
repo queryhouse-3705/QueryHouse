@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 VARCHAR(50), c3 TEXT); INSERT INTO t0 (c1, c2, c3) VALUES (1, 'email@example.com', 'valid email'), (2, 'invalid-email', 'no domain'), (3, 'test@domain.org', 'org domain'); SELECT c2 FROM t0 WHERE c2 LIKE '%@%'; SELECT c3 FROM t0 WHERE c2 LIKE '%.org';

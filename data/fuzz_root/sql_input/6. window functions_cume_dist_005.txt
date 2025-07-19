@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 TEXT, c2 FLOAT, c3 TEXT); INSERT INTO t0 (c0, c1, c2, c3) VALUES (1, 'X', -1.1, 'Group1'), (2, 'Y', 2.2, 'Group1'), (3, 'Z', -3.3, 'Group2'), (4, 'W', 4.4, 'Group2'); SELECT c1, c3, CUME_DIST() OVER (PARTITION BY c3 ORDER BY c2, c0) AS multi_layer_distribution FROM t0;

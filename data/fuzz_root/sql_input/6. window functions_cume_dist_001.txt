@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 TEXT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'Alpha', -10.1), (2, 'Beta', 20.2), (3, 'Gamma', -30.3), (4, 'Delta', 40.4); SELECT c1, c2, CUME_DIST() OVER (PARTITION BY c1 ORDER BY c2 DESC) AS descending_distribution FROM t0;

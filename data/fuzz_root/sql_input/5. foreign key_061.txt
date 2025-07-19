@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 FLOAT, c3 TEXT); INSERT INTO t0 (c1, c2, c3) VALUES (1, 0.333, 'third'), (2, 0.5, 'half'), (3, 0.25, 'quarter'); SELECT c2 FROM t0 WHERE c3 LIKE '%half%'; SELECT c1 FROM t0 WHERE c2 BETWEEN 0.3 AND 0.5;

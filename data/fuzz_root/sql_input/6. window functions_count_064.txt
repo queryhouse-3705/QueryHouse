@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 TEXT, c2 INT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'GroupA', 10), (2, 'GroupB', 20), (3, 'GroupA', 30), (4, 'GroupC', 40); SELECT c1, c2, COUNT(*) OVER (PARTITION BY c1, c2 > 20 ORDER BY c0) AS multi_partition_count FROM t0;

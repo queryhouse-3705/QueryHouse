@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 TEXT, c2 DOUBLE); INSERT INTO t0 (c0, c1, c2) VALUES (-1000, 'v0', 0.1), (0, 'v1', 0.2), (1000, 'v2', 0.3), (0, 'v3', 0.4); SELECT c0, c1, c2, ROW_NUMBER() OVER (ORDER BY c2, c0 DESC) AS rn FROM t0;

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 TEXT); INSERT INTO t0 (c0, c1) VALUES (1, 'Alpha'), (2, 'Beta'), (3, 'Gamma'); CREATE TABLE t1 (c0 INT, c1 TEXT); INSERT INTO t1 (c0, c1) VALUES (1, 'A'), (2, 'B'), (4, 'C'); SELECT COUNT(*) AS total_pairs, COUNT(t1.c0) AS matching_pairs FROM t0 LEFT JOIN t1 ON t0.c0 = t1.c0;

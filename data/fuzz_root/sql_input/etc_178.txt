@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 JSON, c2 TEXT); CREATE TABLE t1 (i0 INTEGER, i1 VARCHAR(100)); INSERT INTO t0 (c0, c1, c2) VALUES (1, '{"pa":{"th":[1,2,3]}}', 'v0'), (2, '{"pa":{"th":[4,5,6]}}', 'v1'); INSERT INTO t1 (i0, i1) VALUES (1, 'value1'), (2, 'value2'); SELECT * FROM t0 INNER JOIN t1 ON t1.i0 = t0.c0 WHERE t0.c1 -> '$.pa.th[0]' LIKE '1%';

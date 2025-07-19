@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 INTEGER, c2 TEXT, c3 INTEGER); INSERT INTO t0 (c0, c1, c2, c3) VALUES (10, 5, 'pattern1', 1), (20, 3, 'example', 2), (5, 4, 'pattern2', 3), (15, 2, 'sample', 4), (25, 1, 'pattern3', 5); SELECT c0, c1, c2, c3, MIN(c0 + c1) FILTER (WHERE c2 LIKE 'pattern%') OVER (ORDER BY c3) AS min_binary_like_filtered FROM t0;

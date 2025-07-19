@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 TEXT, i0 INTEGER); CREATE TABLE t1 (i1 INTEGER); INSERT INTO t0 (c0, i0) VALUES ('test v0', 1), ('test v1', 2); INSERT INTO t1 (i1) VALUES (1), (2); WITH cte_name AS (SELECT c0 FROM t0 WHERE c0 LIKE 'test v%') SELECT * FROM cte_name INNER JOIN t1 ON t1.i1 = 1;

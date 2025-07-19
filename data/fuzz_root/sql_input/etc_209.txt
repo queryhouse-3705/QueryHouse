@@ -1,0 +1,1 @@
+CREATE TABLE t0 (i0 INTEGER PRIMARY KEY, c0 TEXT, json_col JSON); INSERT INTO t0 (i0, c0, json_col) VALUES (1, 'data v0', '{"key": "alpha"}'), (2, 'data v1', '{"key": "beta"}'); SELECT c0, json_col -> '$.key' AS key_value FROM t0 WHERE json_col -> '$.key' = 'beta';

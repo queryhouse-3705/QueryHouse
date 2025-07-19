@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS ('error_' || COALESCE(c0, NULL)) VIRTUAL); INSERT INTO t0 (c0) VALUES ('data'), ('test'), (NULL); INSERT INTO t0 (c0) VALUES ('value'), ('error'), (NULL); INSERT INTO t0 (c0) VALUES ('input'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'data'; SELECT c0, c1 FROM t0 WHERE c1 LIKE 'error%';

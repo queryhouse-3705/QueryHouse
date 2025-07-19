@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 INTEGER, c2 DOUBLE); INSERT INTO t0 (c0, c1, c2) VALUES ('x', 1, 0.01), ('y', 2, 0.02), ('z', 3, 0.03), ('x', 4, 0.04); SELECT c0, c1, c2, ROW_NUMBER() OVER (PARTITION BY c1 ORDER BY c2 * 100 DESC, LENGTH(c0)) AS rn FROM t0;

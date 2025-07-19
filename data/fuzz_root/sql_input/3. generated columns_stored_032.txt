@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS ('prefix_' || RTRIM(c0, '_')) STORED); INSERT INTO t0 (c0) VALUES ('value_'); INSERT INTO t0 (c0) VALUES ('data_'); INSERT INTO t0 (c0) VALUES ('test_'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'value_'; SELECT c1 FROM t0 WHERE c0 = 'data_';

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 TEXT, c3 TEXT); INSERT INTO t0 (c1, c2, c3) VALUES (1, 'hello world', 'hELLo wORLd'), (2, '123 test', '123 TEST'), (3, 'Good Bye', 'gOOD bYE'); SELECT c1 FROM t0 WHERE LOWER(c2) = LOWER(c3); SELECT c2 FROM t0 WHERE UPPER(c2) <> UPPER(c3);

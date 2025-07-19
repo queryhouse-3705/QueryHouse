@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (REPLACE(c0, 'test', 'done') || '_complete') VIRTUAL); INSERT INTO t0 (c0) VALUES ('test_case1'), ('test_case2'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'test_case1'; SELECT c1 FROM t0 WHERE c0 LIKE 'test_case%';

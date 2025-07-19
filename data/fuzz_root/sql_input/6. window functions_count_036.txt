@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 INT, c2 TEXT); INSERT INTO t0 (c0, c1, c2) VALUES (1, NULL, 'Root'), (2, 1, 'Child1'), (3, 2, 'Child2'), (4, 3, 'Child3'); SELECT c2, COUNT(*) OVER (PARTITION BY c1 IN (SELECT c0 FROM t0 WHERE c1 IS NOT NULL) ORDER BY c0) AS dynamic_self_count FROM t0;

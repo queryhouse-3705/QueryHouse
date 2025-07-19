@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 VARCHAR(50), c2 INT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'GroupX', 100), (2, 'GroupY', 200), (3, 'GroupX', 300), (4, 'GroupZ', 400); SELECT c1, c2, COUNT(*) OVER (PARTITION BY c1 ORDER BY c2 ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS local_window_count FROM t0;

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 VARCHAR(10)); INSERT INTO t0 (c0, c1, c2) VALUES (1, 10.0, 'A'), (2, 9999.99, 'A'), (3, -100000.0, 'B'), (4, 0.00001, 'B'), (5, 1.414213, 'C'); SELECT c0, c1, c2, LAG(c1) OVER (PARTITION BY c2 ORDER BY c1 DESC) AS lag_in_partition FROM t0;

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 VARCHAR(50), c1 FLOAT); INSERT INTO t0 (c0, c1) VALUES ('Filter1', 10), ('Filter1', -20), ('Filter2', 30), ('Filter2', -40); SELECT c0, c1, AVG(c1) OVER(PARTITION BY c0) AS avg_filtered FROM t0 WHERE c0 = 'Filter1';

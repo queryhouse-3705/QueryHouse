@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 FLOAT, c2 INT); INSERT INTO t0 (c0, c1, c2) VALUES ('Alpha', -123.456, 10), ('Beta', 0.0, 20), ('Gamma', 123.456, -10), ('Delta', -987.654, 0); SELECT c0, c1, COUNT(*) OVER (PARTITION BY c1 > 0 ORDER BY c2) AS type_count FROM t0;

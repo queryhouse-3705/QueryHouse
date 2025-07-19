@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 TEXT); INSERT INTO t0 VALUES (1, 0.11111, 'v0_precision'), (2, -0.22222, 'v1_scale'), (3, 999.99999, 'v2_large'), (4, -999.99999, 'v3_small'), (5, 0.0, 'v4_zero'); SELECT c0, c1, NTILE(4) OVER (PARTITION BY MOD(LENGTH(c2), 2) ORDER BY CEIL(c1 * c0)) AS ntile_rank FROM t0;

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 VARCHAR(50), c1 INT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES ('SetA', 1, 10.5), ('SetA', 2, -20.25), ('SetB', 1, 30.99), ('SetB', 2, 40.01); SELECT c0, c1, c2, AVG(c2) OVER(PARTITION BY c0, c1) AS avg_complex FROM t0;

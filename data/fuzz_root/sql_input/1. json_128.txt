@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 JSON); INSERT INTO t1 (c0) VALUES ('{"k0": "value", "k1": null}'), ('{"k0": "missing", "k1": "value"}'); SELECT c0 -> '$.k1' FROM t1 WHERE NOT NOT c0 -> '$.k1' IS NULL;

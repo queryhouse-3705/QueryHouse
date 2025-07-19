@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 TEXT, c1 INTEGER); INSERT INTO t1 (c0, c1) VALUES ('v0', 5), ('v1', 25), ('v2', 15); WITH t0 AS (SELECT t1.c0, CASE WHEN t1.c1 > 30 THEN 'Over 30' WHEN t1.c1 < 10 THEN 'Under 10' ELSE '10-30' END AS category FROM t1) SELECT t0.c0, t0.category FROM t0;

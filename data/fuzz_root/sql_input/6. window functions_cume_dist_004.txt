@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 TEXT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'A', 10.0), (1, 'A', 10.0), (2, 'B', 20.0), (3, 'C', 30.0); SELECT c1, CUME_DIST() OVER (ORDER BY c2) AS unique_distribution FROM t0;

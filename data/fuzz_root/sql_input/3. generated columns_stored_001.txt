@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (UPPER('static_' || c0 || '_end')) STORED); INSERT INTO t0 (c0) VALUES ('start'); INSERT INTO t0 (c0) VALUES ('data'); INSERT INTO t0 (c0) VALUES ('value'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'start'; SELECT c1 FROM t0 WHERE c0 = 'value';

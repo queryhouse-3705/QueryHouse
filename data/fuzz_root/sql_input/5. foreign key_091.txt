@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 TEXT, c3 TEXT); INSERT INTO t0 (c1, c2, c3) VALUES (1, 'http://example.com', 'valid'), (2, 'https://secure.com', 'secure'), (3, 'ftp://files.com', 'legacy'); SELECT c2 FROM t0 WHERE c3 = 'secure'; SELECT c1 FROM t0 WHERE c2 LIKE 'http%';

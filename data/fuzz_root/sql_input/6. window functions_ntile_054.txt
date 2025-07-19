@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 TEXT); INSERT INTO t0 VALUES (1, 3.14159, 'v0_circle'), (2, -3.14159, 'v1_neg_circle'), (3, 1.61803, 'v2_phi'), (4, -1.41421, 'v3_sqrt2'), (5, 0.0, 'v4_origin'); SELECT c0, c1, NTILE(3) OVER (PARTITION BY LENGTH(c2) + MOD(c0, 2) ORDER BY POWER(c1, 3)) AS ntile_rank FROM t0;

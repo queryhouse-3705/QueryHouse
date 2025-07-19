@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 TEXT, c3 TEXT); INSERT INTO t0 (c1, c2, c3) VALUES (1, 'student-A', 'math'), (2, 'student-B', 'science'), (3, 'student-C', 'history'); SELECT c2 FROM t0 WHERE c3 = 'science'; SELECT c3 FROM t0 WHERE c2 LIKE '%A';

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 JSON); INSERT INTO t0 (c0) VALUES ('{"k0": {"k1": "v3", "k2": 2}}'), ('{"k0": {"k1": "v1", "k2": 0}}'); SELECT c0 -> '$.k0.k1' FROM t0 WHERE c0 -> '$.k0.k2' <> '1';

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 TEXT); CREATE TABLE t1 (c0 INT, c1 FLOAT); INSERT INTO t0 (c0, c1) VALUES (1, 'Alpha'), (2, 'Beta'), (3, 'Gamma'), (4, 'Delta'); INSERT INTO t1 (c0, c1) VALUES (1, 0.1), (2, 1.2), (3, -2.3), (4, 3.4); SELECT t0.c1 AS name, COUNT(*) OVER (PARTITION BY t1.c1 > 0 ORDER BY t1.c0) AS value_group_count FROM t0 JOIN t1 ON t0.c0 = t1.c0;

@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 JSON); INSERT INTO t1 (c0) VALUES ('{"k0": [1, 2, 3], "k1": ["a", null, "c"]}'), ('{"k0": [4, 5, 6], "k1": ["x", "y", "z"]}'); SELECT NOT c0 -> '$.k1[1]' IS NULL FROM t1;

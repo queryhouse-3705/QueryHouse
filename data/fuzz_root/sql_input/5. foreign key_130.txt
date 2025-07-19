@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT PRIMARY KEY, c1 VARCHAR(50), c2 INT, c3 VARCHAR(255), FOREIGN KEY(c2) REFERENCES t0(c0)); INSERT INTO t0 (c0, c1, c2, c3) VALUES (1, 'Root', NULL, '/'), (2, 'Child A', 1, '/childA'), (3, 'Child B', 1, '/childB'), (4, 'Leaf A1', 2, '/childA/leafA1'); SELECT c1, c3 FROM t0 WHERE c3 LIKE '/childA%'; SELECT * FROM t0 WHERE c2 = 1;

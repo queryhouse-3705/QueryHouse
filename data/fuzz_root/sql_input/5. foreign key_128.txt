@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT PRIMARY KEY, c1 VARCHAR(50), c2 INT, c3 VARCHAR(20), FOREIGN KEY(c2) REFERENCES t0(c0)); INSERT INTO t0 (c0, c1, c2, c3) VALUES (1, 'Pending', NULL, 'Active'), (2, 'Approved', 1, 'Completed'), (3, 'Rejected', 1, 'Failed'); SELECT c1, c3 FROM t0 WHERE c2 IS NOT NULL; SELECT * FROM t0 WHERE c3 = 'Active';

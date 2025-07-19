@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(60), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (256, 'v0', -16.0), (512, 'v1', 8.0), (1024, 'v2', -4.0); SELECT c0, SQRT(ABS(c2 * 4)) AS root_value FROM t0 WHERE c0 % 256 = 0;

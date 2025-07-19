@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(30), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (10, 'v0', 0.1), (-10, 'v1', -0.2), (20, 'v2', 0.3); SELECT c1, (c2 * c0) - POWER(c2, 2) AS complex_calc FROM t0 WHERE c0 + c2 > 0;

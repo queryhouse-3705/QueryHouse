@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 TEXT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'GroupX', 0.5), (2, 'GroupY', -1.5), (3, 'GroupX', 1.5), (4, 'GroupZ', -0.5); SELECT c1, c2, COUNT(*) OVER (PARTITION BY c1, c2 > 0 ORDER BY ABS(c2)) AS mixed_partition_count FROM t0;

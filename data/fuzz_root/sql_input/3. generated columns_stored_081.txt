@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (c0 || ' connected') STORED); INSERT INTO t0 (c0) VALUES ('device'); INSERT INTO t0 (c0) VALUES ('network'); INSERT INTO t0 (c0) VALUES ('server'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'device'; SELECT c1 FROM t0 WHERE c0 = 'server';

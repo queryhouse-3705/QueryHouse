@@ -1,0 +1,1 @@
+drop view v0; CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 VARCHAR(100)); INSERT INTO t0 VALUES (22, 2.2, 'v0'), (-44, -4.4, 'v1'), (66, 6.6, 'v2'); CREATE VIEW v0 AS SELECT c2 FROM t0 WHERE ABS(c0) / c1 > 5 AND c0 + c1 * 2 < 100; SELECT * FROM v0;

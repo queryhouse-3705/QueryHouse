@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 TEXT, c1 INTEGER); INSERT INTO t1 (c0, c1) VALUES ('v0', 10), ('v1', 25), ('v2', 35); WITH t0 AS (SELECT CASE WHEN c1 > 20 THEN CASE WHEN c1 < 30 THEN 'mid' ELSE 'high' END ELSE 'low' END AS category FROM t1) SELECT * FROM t0;

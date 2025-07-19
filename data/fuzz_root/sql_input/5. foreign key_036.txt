@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 VARCHAR(100), c3 TEXT); INSERT INTO t0 (c1, c2, c3) VALUES (1, 'repeatingpatternrepeatingpattern', 'unique'), (2, 'nonrepeatingpattern', 'unique'), (3, 'repeatingpatternrepeatingpattern', 'duplicate'); SELECT c1 FROM t0 WHERE LENGTH(c2) > 20; SELECT c2, c3 FROM t0 WHERE c2 LIKE '%repeatingpattern%';

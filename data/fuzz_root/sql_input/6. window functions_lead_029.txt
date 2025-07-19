@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 INTEGER); INSERT INTO t0 (c0, c1, c2) VALUES (1, 10.0, 2), (2, -20.0, 3), (3, 30.0, 1), (4, -40.0, 2), (5, 50.0, 4); SELECT c0, c1, c2, LEAD(c1 + c2 * CASE WHEN c1 > 0 THEN 2 ELSE -1 END) OVER (ORDER BY c2 ASC) AS lead_dynamic_calc FROM t0;

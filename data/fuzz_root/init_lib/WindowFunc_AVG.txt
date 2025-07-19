@@ -1,0 +1,17 @@
+SELECT c0, AVG(c0) OVER () AS avg_value FROM t0;
+SELECT c0, AVG(c0) FILTER(WHERE c0 > 5) OVER () AS avg_filtered FROM t0;
+SELECT c0, AVG(c0) OVER (ORDER BY c1) AS running_avg FROM t0;
+SELECT c0, AVG(c0) OVER (ORDER BY c1 ASC) AS running_avg FROM t0;
+SELECT c0, AVG(c0) OVER (ORDER BY c1 DESC) AS running_avg FROM t0;
+SELECT c0, AVG(c0) OVER (ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_avg FROM t0;
+SELECT c0, AVG(c0) OVER (RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_avg FROM t0;
+SELECT department,AVG(salary) OVER(PARTITION BY department) AS avg_salary_by_department FROM employees;
+SELECT AVG(salary) OVER(ORDER BY hire_date) AS avg_salary_over_time FROM employees;
+SELECT department,AVG(salary) OVER(PARTITION BY department ORDER BY hire_date) AS avg_salary_by_department_over_time FROM employees;
+SELECT AVG(sales_amount) OVER(PARTITION BY region) AS avg_sales_by_region FROM sales;
+SELECT AVG(score) OVER(PARTITION BY class,subject ORDER BY exam_date) AS avg_score_by_class_subject_over_time FROM exam_scores;
+SELECT AVG(price) OVER(ORDER BY product_name ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS rolling_avg_price FROM products;
+SELECT department,AVG(hours_worked) OVER(PARTITION BY department RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS avg_hours_worked_by_department FROM timesheets;
+SELECT AVG(revenue) OVER(PARTITION BY year ORDER BY month) AS avg_revenue_over_months FROM monthly_revenues;
+SELECT department,AVG(bonus) OVER(PARTITION BY department ROWS BETWEEN UNBOUNDED PRECEDING AND 1 FOLLOWING) AS avg_bonus_within_department FROM employees;
+SELECT AVG(grade) OVER(ORDER BY submission_date RANGE BETWEEN INTERVAL '1' MONTH PRECEDING AND CURRENT ROW) AS avg_grade_last_month FROM assignments;

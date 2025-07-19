@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (i0 INTEGER, json_col JSON); INSERT INTO t0 (i0, json_col) VALUES (1, '{"key": "value1"}'), (2, '{"key": "value2"}'); SELECT i0, json_col -> '$.key' AS extracted_key FROM t0 WHERE json_col -> '$.key' = 'value1';

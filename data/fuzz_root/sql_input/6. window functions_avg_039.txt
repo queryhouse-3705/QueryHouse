@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 VARCHAR(50), c1 FLOAT, c2 VARCHAR(50)); INSERT INTO t0 (c0, c1, c2) VALUES ('A', 100, 'Active'), ('B', 200, 'Inactive'), ('C', -300, 'Active'), ('D', -400, 'Inactive'); SELECT c0, c1, c2, AVG(c1) OVER(PARTITION BY c2) AS avg_state FROM t0;

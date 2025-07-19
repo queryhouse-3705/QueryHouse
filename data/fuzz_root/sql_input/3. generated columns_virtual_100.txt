@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS ('RESULT_' || REPLACE(c0, 'temp', 'perm')) VIRTUAL); INSERT INTO t0 (c0) VALUES ('temp_value'), ('final_value'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'temp_value'; SELECT c1 FROM t0 WHERE c0 = 'final_value';

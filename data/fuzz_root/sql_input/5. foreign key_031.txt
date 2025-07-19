@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 TEXT, c3 TEXT); INSERT INTO t0 (c1, c2, c3) VALUES (1, '1=1', 'logical true'), (2, '1=0', 'logical false'), (3, 'a AND b', 'boolean op'); SELECT c2 FROM t0 WHERE c3 LIKE '%true%'; SELECT c1, c3 FROM t0 WHERE c2 LIKE '%AND%';

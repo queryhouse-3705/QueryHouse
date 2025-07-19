@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 VARCHAR(50)); INSERT INTO t0 (c0, c1) VALUES (1, 'Apple'), (2, 'Banana'), (3, 'Apple Pie'), (4, 'Cherry'); SELECT c1, COUNT(*) OVER (PARTITION BY c1 LIKE 'Apple%') AS apple_pattern_count FROM t0;

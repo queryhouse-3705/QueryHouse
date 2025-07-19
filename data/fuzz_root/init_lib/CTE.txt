@@ -1,0 +1,9 @@
+WITH cte_name AS (SELECT c0, c1 FROM t0) SELECT * FROM cte_name;
+WITH cte_name AS (SELECT c0, c1, ROW_NUMBER() OVER (PARTITION BY c0 ORDER BY c1) AS row_num FROM t0) SELECT * FROM cte_name WHERE row_num = 1;
+WITH sales_summary AS (SELECT employee_id,SUM(sale_amount) AS total_sales FROM sales GROUP BY employee_id) SELECT employee_id,total_sales FROM sales_summary;
+WITH department_sales AS (SELECT e.department,SUM(s.sale_amount) AS total_sales FROM employees e JOIN sales s ON e.employee_id=s.employee_id GROUP BY e.department) SELECT department,total_sales FROM department_sales;
+WITH sales_summary AS (SELECT employee_id,SUM(sale_amount) AS total_sales FROM sales GROUP BY employee_id),employee_details AS (SELECT e.employee_id,e.name,s.total_sales FROM employees e JOIN sales_summary s ON e.employee_id=s.employee_id) SELECT name,total_sales FROM employee_details;
+WITH ranked_sales AS (SELECT employee_id,sale_amount,ROW_NUMBER() OVER(PARTITION BY employee_id ORDER BY sale_date DESC) AS rn FROM sales) SELECT employee_id,sale_amount FROM ranked_sales WHERE rn=1;
+WITH high_earners AS (SELECT employee_id,SUM(salary) AS total_salary FROM salaries GROUP BY employee_id HAVING SUM(salary)>50000) SELECT employee_id,total_salary FROM high_earners;
+WITH department_totals AS (WITH employee_totals AS (SELECT employee_id,SUM(sale_amount) AS total_sales FROM sales GROUP BY employee_id) SELECT e.department,SUM(t.total_sales) AS department_sales FROM employees e JOIN employee_totals t ON e.employee_id=t.employee_id GROUP BY e.department) SELECT * FROM department_totals;
+WITH normalized_sales AS (SELECT employee_id,sale_amount-AVG(sale_amount) OVER() AS normalized_sale FROM sales) SELECT employee_id,normalized_sale FROM normalized_sales;

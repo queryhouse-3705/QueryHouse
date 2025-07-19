@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 TEXT, c3 TEXT); INSERT INTO t0 (c1, c2, c3) VALUES (1, 'file-1.txt', 'text document'), (2, 'file-2.csv', 'spreadsheet'), (3, 'file-3.png', 'image file'); SELECT c2 FROM t0 WHERE c3 LIKE '%spreadsheet'; SELECT c3 FROM t0 WHERE c2 LIKE 'file-3%';

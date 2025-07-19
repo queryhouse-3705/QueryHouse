@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(100), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (3, 'v0', 0.3), (6, 'v1', 0.6), (9, 'v2', 0.9); SELECT SUM(c2) OVER (PARTITION BY c0 % 2) AS partitioned_sum FROM t0;

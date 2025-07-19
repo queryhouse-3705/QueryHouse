@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 TEXT); INSERT INTO t0 VALUES (NULL, 0.0001, 'v0_null'), (1, -0.0001, 'v1_data'), (2, 9999.9999, 'v2_extreme'), (3, -9999.9999, 'v3_extreme_neg'), (4, 0.0, 'v4_zero'); SELECT c0, c1, NTILE(3) OVER (PARTITION BY COALESCE(c0, 0) ORDER BY CEIL(c1) * LENGTH(c2) DESC) AS ntile_rank FROM t0;

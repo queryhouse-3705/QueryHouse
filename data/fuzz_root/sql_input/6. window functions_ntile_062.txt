@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 TEXT); INSERT INTO t0 VALUES (1000, -0.00001, 'v0_mini'), (2000, 0.00002, 'v1_micro'), (3000, -0.00003, 'v2_nano'), (4000, 0.00004, 'v3_pico'), (5000, 0.0, 'v4_femto'); SELECT c0, c1, NTILE(5) OVER (PARTITION BY ROUND(c0 / 1000) ORDER BY ABS(c1) * LENGTH(c2)) AS ntile_rank FROM t0;

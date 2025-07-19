@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (RTRIM('DEBUG_' || LOWER(REPLACE(c0, ' ', '_')))) VIRTUAL); INSERT INTO t0 (c0) VALUES (' debug me '), ('run test'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = ' debug me '; SELECT c1 FROM t0 WHERE c0 = 'run test';

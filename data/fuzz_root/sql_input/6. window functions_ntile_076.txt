@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 TEXT); CREATE TABLE t1(c0 INTEGER, c1 FLOAT); INSERT INTO t0 VALUES (1, 10.1, 'v0_test'), (2, -20.2, 'v1_case'), (3, 30.3, 'v2_trial'), (4, -40.4, 'v3_check'), (5, 0.0, 'v4_final'); INSERT INTO t1 VALUES (1, 0.1), (2, -0.2), (3, 0.3), (4, -0.4), (5, 0.5); SELECT * FROM t0, t1 WHERE t0.c0 = t1.c0 AND t1.c1 > 0;

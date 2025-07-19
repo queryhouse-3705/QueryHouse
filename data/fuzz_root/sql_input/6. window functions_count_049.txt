@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 INT); INSERT INTO t0 (c0, c1) VALUES ('A', 1), ('B', 2), ('A', 3), ('C', 4); SELECT c0, COUNT(*) OVER (PARTITION BY c1 < 3 ORDER BY c1) AS range_count FROM t0 WHERE c1 > 1;

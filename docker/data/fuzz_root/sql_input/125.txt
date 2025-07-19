@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 INTEGER); INSERT INTO t0 (c0, c1) VALUES (10, 5), (20, 15), (5, 8), (15, 3), (25, 12); SELECT c0, c1, SUM(c0) FILTER (WHERE c1 BETWEEN 1 AND 10) OVER (ORDER BY c0) AS sum_between_filtered FROM t0;

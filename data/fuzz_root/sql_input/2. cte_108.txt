@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c1 TEXT, c2 TEXT); CREATE TABLE t2 (column1 TEXT); INSERT INTO t1 (c1, c2) VALUES ('v0', 'v1'), ('v2', 'v3'); INSERT INTO t2 (column1) VALUES ('v4'), ('v5'); WITH t0 AS (SELECT 'v0' AS c1, 'v1' AS c2 UNION ALL SELECT 'v2', 'v3'), t1 AS (SELECT 'v4' AS column1 UNION ALL SELECT 'v5') SELECT * FROM t0, t1;

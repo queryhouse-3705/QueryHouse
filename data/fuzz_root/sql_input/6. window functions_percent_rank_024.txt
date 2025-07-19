@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 TEXT); INSERT INTO t0(c0, c1, c2) VALUES (1, 2.71, 'pi'), (2, 3.14, 'e'), (3, 1.61, 'phi'), (4, 1.41, 'sqrt'), (5, 0.58, 'log'); SELECT c0, c1, c2, PERCENT_RANK() OVER (PARTITION BY LENGTH(c2) % 2 ORDER BY POWER(c1, c0)) AS rank_percent FROM t0;

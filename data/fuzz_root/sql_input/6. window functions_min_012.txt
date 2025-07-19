@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 VARCHAR(50), c2 FLOAT, c3 JSON, c4 TEXT); INSERT INTO t0 VALUES (10, 'v0', 1.23, '{"key": "value"}', 'v1'), (20, 'v2', -4.56, '{"key": "v2"}', 'v3'), (30, 'v4', 7.89, '{"nested": {"key": "v5"}}', 'v6'), (40, 'v7', -12.34, '{"array": [1, 2, 3]}', 'v8'); SELECT c0, MIN(LENGTH(c1)) OVER (ORDER BY c2 DESC) AS min_length, c3 FROM t0;

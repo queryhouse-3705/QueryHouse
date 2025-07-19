@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 VARCHAR(50), c1 FLOAT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES ('Group1', 50, 2), ('Group1', 100, 3), ('Group2', 200, 4), ('Group2', 400, 5); SELECT c0, c1, c2, SUM(c1 * c2) OVER(PARTITION BY c0) / SUM(c2) OVER(PARTITION BY c0) AS avg_weighted_group FROM t0;

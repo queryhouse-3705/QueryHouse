@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 JSON); INSERT INTO t1 (c0) VALUES ('{"k1": [10, 20]}'), ('{"k1": [30, 40]}'); SELECT c0 -> '$.k1[0]' FROM t1 WHERE c0 -> '$.k1' LIKE '[%]';

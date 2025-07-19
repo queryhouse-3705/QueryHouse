@@ -1,0 +1,51 @@
+# General
+
+*.log
+*.md
+.git
+.gitignore
+Dockerfile
+.dockerignore
+.env
+.vscode
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env.*
+.venv
+.idea
+
+# C Build artifacts
+*.o
+*.obj
+*.so
+*.a
+*.out
+*.exe
+*.dll
+
+# C Build directories
+/build
+CMakeFiles/
+Makefile
+CMakeCache.txt
+cmake_install.cmake
+
+# IDE/editor folders and files
+*.log
+*.swp
+*.swo
+*~
+.idea/
+.clangd/
+
+# Misc
+*.tmp
+*.bak
+*.old
+*.user
+.DS_Store

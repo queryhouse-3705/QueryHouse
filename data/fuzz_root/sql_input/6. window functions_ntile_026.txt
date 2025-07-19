@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 TEXT); INSERT INTO t0 VALUES (0, 0.0, 'v0'), (1, 1.0, 'v1'), (2, 2.0, 'v2'), (3, 3.0, 'v3'), (4, 4.0, 'v4'); SELECT c0, NTILE(2) OVER (PARTITION BY MOD(c0, 3) ORDER BY COALESCE(c1, 0)) AS ntile_rank FROM t0;

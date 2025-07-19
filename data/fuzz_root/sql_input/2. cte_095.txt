@@ -1,0 +1,1 @@
+WITH t0 AS (SELECT 'duplicate' AS c0 UNION SELECT 'duplicate') SELECT DISTINCT c0 FROM t0;

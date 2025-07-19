@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 JSON); INSERT INTO t0 VALUES ('{"v0": 1, "v1": "Alice"}'); INSERT INTO t0 VALUES ('{"v0": 2, "v1": "Bob"}'); INSERT INTO t0 VALUES ('{"v0": 1, "v1": "Charlie"}'); SELECT * FROM t0 WHERE c0 -> '$.v0' = '1';

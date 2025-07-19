@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 FLOAT, c2 DOUBLE); INSERT INTO t0 (c0, c1, c2) VALUES ('v0', 0.0001, 1.1), ('v1', 0.001, 2.2), ('v2', 0.01, 3.3), ('v3', 0.1, 4.4); SELECT c0, c1, c2, ROW_NUMBER() OVER (ORDER BY c1 + c2 DESC, c0) AS rn FROM t0;

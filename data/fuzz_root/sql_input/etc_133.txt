@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER PRIMARY KEY, c1 TEXT, c2 INTEGER); CREATE TABLE t1 (c0 INTEGER, c1 TEXT, c2 TEXT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'apple', 10), (2, 'banana', 20); INSERT INTO t1 (c0, c1, c2) VALUES (1, 'fruit', 'red'), (2, 'vegetable', 'yellow'); SELECT t0.c0, t0.c1, t1.c1 FROM t0 LEFT JOIN t1 ON t0.c0 = t1.c0 WHERE t0.c2 = 10;

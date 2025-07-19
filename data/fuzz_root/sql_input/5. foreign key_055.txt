@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 TEXT, c3 INTEGER); INSERT INTO t0 (c1, c2, c3) VALUES (1, 'Leading space', 10), (2, 'Trailing space ', 20), (3, '  Both sides  ', 30); SELECT c2 FROM t0 WHERE c2 LIKE ' Leading%'; SELECT c3 FROM t0 WHERE c2 LIKE '%space ';

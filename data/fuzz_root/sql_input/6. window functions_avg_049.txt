@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 VARCHAR(50), c1 FLOAT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES ('Group1', 50, 2), ('Group1', 100, 4), ('Group2', 200, 5), ('Group2', 400, 10); SELECT c0, c1, c2, AVG(c1 / c2) OVER(PARTITION BY c0 ORDER BY c2) AS avg_group_ratio FROM t0;

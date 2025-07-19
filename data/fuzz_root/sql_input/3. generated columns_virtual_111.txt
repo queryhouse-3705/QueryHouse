@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (RTRIM('ARCHIVE_' || REPLACE(c0, 'temp', 'perm'))) VIRTUAL); INSERT INTO t0 (c0) VALUES ('temp1'), ('temp2'), ('temp3'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'temp1'; SELECT c1 FROM t0 WHERE c0 = 'temp3';

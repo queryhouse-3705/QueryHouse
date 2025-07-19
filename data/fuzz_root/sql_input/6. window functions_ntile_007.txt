@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 VARCHAR(50)); INSERT INTO t0 VALUES (-1, -5.55, 'v0'), (1, 5.55, 'v1'), (-1, -10.55, 'v2'), (1, 10.55, 'v3'), (0, 0.0, 'v4'); SELECT c0, NTILE(4) OVER (PARTITION BY c2 ORDER BY ABS(c1)) AS ntile_rank FROM t0;

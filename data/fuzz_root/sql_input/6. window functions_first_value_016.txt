@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 VARCHAR(10)); INSERT INTO t0 (c0, c1) VALUES (1, 'apple'), (2, 'banana'), (3, 'cherry'), (4, 'date'), (5, 'elderberry'); SELECT c0, c1, FIRST_VALUE(c1) OVER (ORDER BY c1 DESC) AS first_val FROM t0;

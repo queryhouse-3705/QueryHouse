@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 FLOAT); INSERT INTO t0 (c0, c1) VALUES ('A', NULL), ('B', 1.1), ('A', NULL), ('C', -2.2); SELECT c0, c1, COUNT(*) OVER (PARTITION BY c1 IS NOT NULL ORDER BY c0) AS null_based_count FROM t0;

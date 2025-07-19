@@ -1,0 +1,10 @@
+SELECT employee_id,salary,CUME_DIST() OVER(ORDER BY salary) AS cumulative_distribution_salary FROM employees;
+SELECT CUME_DIST() OVER(PARTITION BY department ORDER BY salary DESC) AS cumulative_dist_department FROM employees;
+SELECT employee_id,bonus,CUME_DIST() OVER(ORDER BY bonus DESC) AS cumulative_distribution_bonus FROM employees;
+SELECT CUME_DIST() OVER(PARTITION BY region ORDER BY sales_amount) AS cumulative_dist_sales_region FROM sales;
+SELECT employee_id,hire_date,CUME_DIST() OVER(ORDER BY hire_date ASC) AS cumulative_distribution_hire_date FROM employees;
+SELECT department,CUME_DIST() OVER(PARTITION BY department ORDER BY years_of_experience DESC) AS cumulative_dist_experience_department FROM employees;
+SELECT product_id,price,CUME_DIST() OVER(PARTITION BY category ORDER BY price) AS cumulative_distribution_price FROM products;
+SELECT student_id,score,CUME_DIST() OVER(PARTITION BY class ORDER BY score DESC) AS cumulative_dist_score_class FROM exam_scores;
+SELECT customer_id,order_total,CUME_DIST() OVER(PARTITION BY customer_id ORDER BY order_total DESC) AS cumulative_dist_order_total_customer FROM orders;
+SELECT department,CUME_DIST() OVER(PARTITION BY department ORDER BY performance_rating DESC) AS cumulative_dist_performance_department FROM employee_reviews;

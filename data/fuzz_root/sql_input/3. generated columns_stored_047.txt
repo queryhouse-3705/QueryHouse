@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (CASE WHEN c0 LIKE '%@%' THEN 'email' ELSE 'not_email' END) STORED); INSERT INTO t0 (c0) VALUES ('test@example.com'); INSERT INTO t0 (c0) VALUES ('hello@domain.com'); INSERT INTO t0 (c0) VALUES ('randomtext'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'test@example.com'; SELECT c1 FROM t0 WHERE c0 = 'randomtext';

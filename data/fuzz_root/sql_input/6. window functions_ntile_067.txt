@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 TEXT); INSERT INTO t0 VALUES (-100, 0.123, 'v0_test'), (200, -0.456, 'v1_check'), (300, 0.789, 'v2_case'), (-400, -1.234, 'v3_trial'), (500, 0.0, 'v4_zero'); SELECT c0, c1, NTILE(3) OVER (PARTITION BY ABS(c0) % 2 ORDER BY ROUND(c1 * c0) DESC) AS ntile_rank FROM t0;

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES ('A', 'X', 1.5), ('A', 'Y', -1.5), ('B', 'X', 0.5), ('C', 'Z', 2.5); SELECT c0, c1, COUNT(*) OVER (PARTITION BY c0, c1 ORDER BY c2) AS multi_col_count FROM t0;

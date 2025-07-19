@@ -1,0 +1,10 @@
+SELECT employee_id,salary,LAG(salary,1) OVER(ORDER BY salary) AS previous_salary FROM employees;
+SELECT employee_id,LAG(salary,2) OVER(PARTITION BY department ORDER BY salary) AS salary_two_positions_ago FROM employees;
+SELECT employee_id,bonus,LAG(bonus,1,0) OVER(ORDER BY bonus) AS previous_bonus FROM employees;
+SELECT department,LAG(sales_amount,1) OVER(PARTITION BY region ORDER BY sales_date) AS previous_sales FROM sales;
+SELECT product_id,price,LAG(price,1) OVER(PARTITION BY category ORDER BY price DESC) AS previous_price FROM products;
+SELECT department,LAG(years_of_experience,1) OVER(PARTITION BY department ORDER BY hire_date ASC) AS previous_experience FROM employees;
+SELECT student_id,score,LAG(score,1,0) OVER(PARTITION BY class ORDER BY exam_date DESC) AS previous_score FROM exam_scores;
+SELECT customer_id,order_total,LAG(order_total,2) OVER(PARTITION BY customer_id ORDER BY order_date) AS total_two_orders_ago FROM orders;
+SELECT department,LAG(performance_rating,1) OVER(PARTITION BY department ORDER BY review_date DESC) AS previous_performance_rating FROM employee_reviews;
+SELECT project_id,project_duration,LAG(project_duration,1) OVER(ORDER BY project_duration DESC) AS previous_project_duration FROM projects;

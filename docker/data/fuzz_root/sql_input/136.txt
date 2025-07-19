@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 TEXT, c2 INTEGER); INSERT INTO t0 (c0, c1, c2) VALUES (10, NULL, 1), (20, 'text', 2), (5, NULL, 3), (15, 'example', 4), (25, NULL, 2); SELECT c0, c1, c2, SUM(c0) FILTER (WHERE c1 IS NULL AND c2 IN (1, 2, 3)) OVER (ORDER BY c0) AS sum_is_null_in_filtered FROM t0;

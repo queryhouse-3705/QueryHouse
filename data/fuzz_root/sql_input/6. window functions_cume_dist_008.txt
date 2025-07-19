@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 VARCHAR(50), c1 INT); INSERT INTO t0 (c0, c1) VALUES ('Short', 10), ('MediumLength', 20), ('VeryVeryLongText', 30), ('Short', 40); SELECT c0, CUME_DIST() OVER (ORDER BY LENGTH(c0)) AS length_distribution FROM t0;

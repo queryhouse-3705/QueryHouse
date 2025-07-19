@@ -1,0 +1,349 @@
+diff --git a/sqlglot/__init__.py b/sqlglot/__init__.py
+index cdc519e3..e41a7f82 100644
+--- a/sqlglot/__init__.py
++++ b/sqlglot/__init__.py
+@@ -176,7 +176,7 @@ def convert_match_query_to_list(sqlite_query, dbms):
+ 
+     # Detect search type
+     search_type = detect_search_type(fts_query)
+-    print(f"Search type: {search_type}")
++    #print(f"Search type: {search_type}")
+     
+     if search_type == "Tokenization":
+         if dbms == "sqlite":
+@@ -261,12 +261,12 @@ def transpile(
+         The list of transpiled SQL statements.
+     """
+     write = (read if write is None else write) if identity else write
+-    print("[__init__.py] modify test")
++    #print("[__init__.py] modify test")
+     write = Dialect.get_or_raise(write)
+     
+     if "MATCH" in sql:
+-        print("MATCH in sql")
+-        print(convert_match_query_to_list(sql, write))
++        #print("MATCH in sql")
++        #print(convert_match_query_to_list(sql, write))
+         return convert_match_query_to_list(sql, write)
+         
+         
+diff --git a/sqlglot/dialects/dialect.py b/sqlglot/dialects/dialect.py
+index e9e60b8c..fdbe21ae 100644
+--- a/sqlglot/dialects/dialect.py
++++ b/sqlglot/dialects/dialect.py
+@@ -1595,16 +1595,16 @@ def json_extract_segments(
+         for segment in path.expressions:
+             path = self.sql(segment)
+             if path:
+-                print("path", path)
++                #print("path", path)
+                 if isinstance(segment, exp.JSONPathPart) and (
+                     quoted_index or not isinstance(segment, exp.JSONPathSubscript)
+                 ):
+                     if escape:
+-                        print("is escape")
++                        #print("is escape")
+                         path = self.escape_str(path)
+ 
+                     path = f"{self.dialect.QUOTE_START}{path}{self.dialect.QUOTE_END}"
+-                print("path", path)
++                #print("path", path)
+                 segments.append(path)
+ 
+         if op:
+diff --git a/sqlglot/dialects/oracle.py b/sqlglot/dialects/oracle.py
+index 401a4b81..3b63b4f8 100644
+--- a/sqlglot/dialects/oracle.py
++++ b/sqlglot/dialects/oracle.py
+@@ -74,7 +74,7 @@ def Fts5ToContext(self: MySQL.Generator, expression: exp.Table) -> str:
+         strip_col = [col.strip() for col in fts_args.split(',')]
+         fts_table_args = ', '.join([f"{col} CLOB" for col in strip_col])
+         create_table = f"{table}({fts_table_args})"
+-        print("create_table", create_table)
++        #print("create_table", create_table)
+         create_index = [f"CREATE INDEX idx_fts_{table}_{col} ON {table} ({col}) INDEXTYPE IS CTXSYS.CONTEXT" for col in strip_col]
+         return f"{create_table}; {'; '.join(create_index)}"
+     return self.table_sql(expression)
+diff --git a/sqlglot/dialects/postgres.py b/sqlglot/dialects/postgres.py
+index b7a5d923..41e69a9d 100644
+--- a/sqlglot/dialects/postgres.py
++++ b/sqlglot/dialects/postgres.py
+@@ -195,8 +195,8 @@ def _json_extract_sql(
+     def _generate(self: Postgres.Generator, expression: JSON_EXTRACT_TYPE) -> str:
+         # if expression.args.get("only_json_types"):
+         #     return json_extract_segments(name, quoted_index=False, op=op)(self, expression)
+-        print("HERE")
+-        print("json_extract_segments(name)(self, expression): ", json_extract_segments(name)(self, expression))
++        #print("HERE")
++        #print("json_extract_segments(name)(self, expression): ", json_extract_segments(name)(self, expression))
+         return json_extract_segments(name)(self, expression) + "::TEXT"
+ 
+     return _generate
+diff --git a/sqlglot/generator.py b/sqlglot/generator.py
+index 334d38f1..74a26208 100644
+--- a/sqlglot/generator.py
++++ b/sqlglot/generator.py
+@@ -847,7 +847,7 @@ class Generator(metaclass=_Generator):
+             return ""
+ 
+         if isinstance(expression, str):
+-            print("expression is string")
++            #print("expression is string")
+             return expression
+ 
+         if key:
+@@ -1225,7 +1225,7 @@ class Generator(metaclass=_Generator):
+         alias = self.sql(expression, "this")
+         columns = self.expressions(expression, key="columns", flat=True)
+         columns = f"({columns})" if columns else ""
+-        print("columns", columns)
++        #print("columns", columns)
+ 
+         if columns and not self.SUPPORTS_TABLE_ALIAS_COLUMNS:
+             columns = ""
+@@ -1337,8 +1337,8 @@ class Generator(metaclass=_Generator):
+         else:
+             type_sql = f"{type_sql}{nested}{values}"
+             
+-        print("type_sql")
+-        print(type_sql)
++        #print("type_sql")
++        #print(type_sql)
+         if self.TZ_TO_WITH_TIME_ZONE and type_value in (
+             exp.DataType.Type.TIMETZ,
+             exp.DataType.Type.TIMESTAMPTZ,
+@@ -1989,7 +1989,7 @@ class Generator(metaclass=_Generator):
+         return f" {tablesample_keyword or self.TABLESAMPLE_KEYWORDS} {method}{expr}{seed}"
+ 
+     def using_sql(self, expression: exp.Using) -> str:
+-        print("USING_SQL")
++        #print("USING_SQL")
+         return self.sql(expression, "this")
+ 
+     def pivot_sql(self, expression: exp.Pivot) -> str:
+@@ -2186,7 +2186,7 @@ class Generator(metaclass=_Generator):
+             on_sql = csv(*(self.sql(column) for column in using))
+ 
+         this = expression.this
+-        print(this)
++        #print(this)
+         this_sql = self.sql(this)
+ 
+         if on_sql:
+@@ -4462,4 +4462,4 @@ class Generator(metaclass=_Generator):
+         for_sql = self.sql(expression, "for")
+         for_sql = f" FOR {for_sql}" if for_sql else ""
+ 
+-        return f"OVERLAY({this} PLACING {expr} FROM {from_sql}{for_sql})"
+\ No newline at end of file
++        return f"OVERLAY({this} PLACING {expr} FROM {from_sql}{for_sql})"
+diff --git a/sqlglot/jsonpath.py b/sqlglot/jsonpath.py
+index 697e58e1..3a327e1a 100644
+--- a/sqlglot/jsonpath.py
++++ b/sqlglot/jsonpath.py
+@@ -153,7 +153,7 @@ def parse(path: str, dialect: DialectType = None) -> exp.JSONPath:
+ 
+     while _curr():
+         if _match(TokenType.DOT) or _match(TokenType.COLON):
+-            print(_curr())
++            #print(_curr())
+             recursive = _prev().text == ".."
+ 
+             if _match(TokenType.VAR) or _match(TokenType.IDENTIFIER):
+diff --git a/sqlglot/parser.py b/sqlglot/parser.py
+index c7cb93cd..abbdbdf9 100644
+--- a/sqlglot/parser.py
++++ b/sqlglot/parser.py
+@@ -1561,7 +1561,7 @@ class Parser(metaclass=_Parser):
+     def _advance(self, times: int = 1) -> None:
+         self._index += times
+         self._curr = seq_get(self._tokens, self._index)
+-        print(self._curr)
++        #print(self._curr)
+         self._next = seq_get(self._tokens, self._index + 1)
+ 
+         if self._index > 0:
+@@ -1755,7 +1755,7 @@ class Parser(metaclass=_Parser):
+         if self._match_pair(TokenType.USING, TokenType.FTS5):
+             self._match(TokenType.L_PAREN)
+             args = self._parse_csv(self._parse_id_var)
+-            print("args", args)
++            #print("args", args)
+             self._match(TokenType.R_PAREN)
+             return self.expression(exp.Fts5, expressions=args)
+         else:
+@@ -1789,13 +1789,13 @@ class Parser(metaclass=_Parser):
+         if self._match(TokenType.VIRTUAL):
+             virtual = True
+             
+-        print("check")
++        #print("check")
+         if self._match_pair(TokenType.TABLE, TokenType.FUNCTION, advance=False):
+-            print("check")
++            #print("check")
+             self._advance()
+ 
+         properties = None
+-        print("parse_create")
++        #print("parse_create")
+         create_token = self._match_set(self.CREATABLES) and self._prev
+         if not create_token:
+             # exp.Properties.Location.POST_CREATE
+@@ -1861,7 +1861,7 @@ class Parser(metaclass=_Parser):
+ 
+             this = self._parse_index(index=index, anonymous=anonymous)
+         elif create_token.token_type in self.DB_CREATABLES:
+-            print("create_token.token_type in self.DB_CREATABLES")
++            #print("create_token.token_type in self.DB_CREATABLES")
+             table_parts = self._parse_table_parts(
+                 schema=True, is_db_reference=create_token.token_type == TokenType.SCHEMA
+             )
+@@ -1871,25 +1871,25 @@ class Parser(metaclass=_Parser):
+             extend_props(self._parse_properties(before=True))
+ 
+             this = self._parse_schema(this=table_parts)
+-            print("parse_create, ", self._curr)
++            #print("parse_create, ", self._curr)
+ 
+             # exp.Properties.Location.POST_SCHEMA and POST_WITH
+             extend_props(self._parse_properties())
+-            print("extend_props(self._parse_properties())")
++            #print("extend_props(self._parse_properties())")
+ 
+             self._match(TokenType.ALIAS)
+             if not self._match_set(self.DDL_SELECT_TOKENS, advance=False):
+                 # exp.Properties.Location.POST_ALIAS
+                 extend_props(self._parse_properties())
+-                print("if not self._match_set(self.DDL_SELECT_TOKENS, advance=False):")
++                #print("if not self._match_set(self.DDL_SELECT_TOKENS, advance=False):")
+ 
+             if create_token.token_type == TokenType.SEQUENCE:
+                 expression = self._parse_types()
+                 extend_props(self._parse_properties())
+-                print("if create_token.token_type == TokenType.SEQUENCE:")
++                #print("if create_token.token_type == TokenType.SEQUENCE:")
+             else:
+                 expression = self._parse_ddl_select()
+-                print("else:")
++                #print("else:")
+ 
+             if create_token.token_type == TokenType.TABLE:
+                 # exp.Properties.Location.POST_EXPRESSION
+@@ -1927,9 +1927,9 @@ class Parser(metaclass=_Parser):
+                 clone = self.expression(
+                     exp.Clone, this=self._parse_table(schema=True), shallow=shallow, copy=copy
+                 )
+-        print("parse_as_command_if, ", self._curr)
++        #print("parse_as_command_if, ", self._curr)
+         if self._curr and not self._match_set((TokenType.R_PAREN, TokenType.COMMA), advance=False):
+-            print("parse_as_command_if")
++            #print("parse_as_command_if")
+             return self._parse_as_command(start)
+ 
+         create_kind_text = create_token.text.upper()
+@@ -2089,7 +2089,7 @@ class Parser(metaclass=_Parser):
+             if not prop:
+                 break
+             for p in ensure_list(prop):
+-                print("p", p)
++                #print("p", p)
+                 properties.append(p)
+ 
+         if properties:
+@@ -3111,7 +3111,7 @@ class Parser(metaclass=_Parser):
+     def _parse_table_alias(
+         self, alias_tokens: t.Optional[t.Collection[TokenType]] = None
+     ) -> t.Optional[exp.TableAlias]:
+-        print("_parse_table_alias")
++        #print("_parse_table_alias")
+         any_token = self._match(TokenType.ALIAS)
+         alias = (
+             self._parse_id_var(any_token=any_token, tokens=alias_tokens or self.TABLE_ALIAS_TOKENS)
+@@ -3122,12 +3122,12 @@ class Parser(metaclass=_Parser):
+         
+         if self._match(TokenType.L_PAREN):
+             columns = self._parse_csv(self._parse_function_parameter)
+-            print("_parse_table_alias columns", columns)
++            #print("_parse_table_alias columns", columns)
+             self._match_r_paren() if columns else self._retreat(index)
+         else:
+             columns = None
+         
+-        print("_parse_table_alias alias", alias)
++        #print("_parse_table_alias alias", alias)
+ 
+         if not alias and not columns:
+             return None
+@@ -3594,7 +3594,7 @@ class Parser(metaclass=_Parser):
+     def _parse_table_parts(
+         self, schema: bool = False, is_db_reference: bool = False, wildcard: bool = False
+     ) -> exp.Table:
+-        print("parse_table_parts")
++        #print("parse_table_parts")
+         catalog = None
+         db = None
+         table: t.Optional[exp.Expression | str] = self._parse_table_part(schema=schema)
+@@ -3658,7 +3658,7 @@ class Parser(metaclass=_Parser):
+     
+         using = self._parse_fts5()
+         if using:
+-            print("SET USING")
++            #print("SET USING")
+             table.set("using", using)
+         return table
+ 
+@@ -3672,7 +3672,7 @@ class Parser(metaclass=_Parser):
+         parse_partition: bool = False,
+     ) -> t.Optional[exp.Expression]:
+         
+-        print("parse_table")
++        #print("parse_table")
+         lateral = self._parse_lateral()
+         if lateral:
+             return lateral
+@@ -3732,9 +3732,9 @@ class Parser(metaclass=_Parser):
+             this.set("sample", self._parse_table_sample())
+ 
+         alias = self._parse_table_alias(alias_tokens=alias_tokens or self.TABLE_ALIAS_TOKENS)
+-        print("alias", alias, "done")
++        #print("alias", alias, "done")
+         if alias:
+-            print("set alias")
++            #print("set alias")
+             this.set("alias", alias)
+ 
+         if isinstance(this, exp.Table) and self._match_text_seq("AT"):
+@@ -5475,9 +5475,9 @@ class Parser(metaclass=_Parser):
+             constraints.append(constraint)
+ 
+         if not kind and not constraints:
+-            print("column def", this)
++            #print("column def", this)
+             return this
+-        print("column def", this, kind, constraints)
++        #print("column def", this, kind, constraints)
+         return self.expression(exp.ColumnDef, this=this, kind=kind, constraints=constraints)
+ 
+     def _parse_auto_increment(
+@@ -7063,7 +7063,7 @@ class Parser(metaclass=_Parser):
+ 
+     def _parse_as_command(self, start: Token) -> exp.Command:
+         while self._curr:
+-            print("AS COMMAND", self._curr.text)
++            #print("AS COMMAND", self._curr.text)
+             self._advance()
+         text = self._find_sql(start, self._prev)
+         size = len(start.text)
+diff --git a/sqlglot/tokens.py b/sqlglot/tokens.py
+index 2ad80a18..63d13981 100644
+--- a/sqlglot/tokens.py
++++ b/sqlglot/tokens.py
+@@ -999,7 +999,7 @@ class Tokenizer(metaclass=_Tokenizer):
+ 
+     def tokenize(self, sql: str) -> t.List[Token]:
+         """Returns a list of tokens corresponding to the SQL string `sql`."""
+-        print("tokenize")
++        #print("tokenize")
+         if USE_RS_TOKENIZER:
+             return self.tokenize_rs(sql)
+ 

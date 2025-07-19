@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 DOUBLE, c2 VARCHAR(10)); INSERT INTO t0 (c0, c1, c2) VALUES (1, 10.01, 'v0'), (2, 20.02, 'v1'), (3, 30.03, 'v2'), (NULL, 10.01, 'v3'), (4, 10.01, 'v4'); SELECT c0, c1, c2, RANK() OVER (PARTITION BY c1 ORDER BY c0 NULLS LAST) AS rank_value FROM t0;

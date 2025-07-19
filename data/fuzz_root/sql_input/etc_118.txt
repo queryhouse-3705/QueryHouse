@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 VARCHAR(255) PRIMARY KEY, c1 TEXT, c2 TEXT); CREATE TABLE t1 (c0 VARCHAR(255), c1 TEXT, c2 VARCHAR(50)); INSERT INTO t0 (c0, c1, c2) VALUES ('v0', 'v1', 'v2'), ('v3', 'v4', 'v5'); INSERT INTO t1 (c0, c1, c2) VALUES ('v0', 'v6', 'v1'), ('v3', 'v7', 'v8'); SELECT t0.c0, t0.c1, t1.c1 FROM t0 LEFT JOIN t1 ON t0.c0 = t1.c0;

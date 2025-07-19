@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 VARCHAR(5), c3 FLOAT); INSERT INTO t0 (c0, c1, c2, c3) VALUES (10, 1.5, 'grpX', -0.1), (20, -2.6, 'grpY', 0.2), (30, 3.7, 'grpX', -0.3), (40, -4.8, 'grpZ', 0.4), (50, 5.9, 'grpY', -0.5); SELECT nth_value(c3 - c1, 2) OVER (PARTITION BY c2 ORDER BY c0 RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS rolling_difference FROM t0;

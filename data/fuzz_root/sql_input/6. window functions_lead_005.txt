@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 1.0, 10.0), (2, 2.0, 20.0), (3, 3.0, 30.0), (4, 4.0, 40.0), (5, 5.0, 50.0); SELECT c0, c1, c2, LEAD(c1 + c2) OVER (ORDER BY c0 ASC) AS lead_combined_calc FROM t0;

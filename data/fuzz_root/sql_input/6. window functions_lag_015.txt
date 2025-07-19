@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 VARCHAR(10)); INSERT INTO t0 (c0, c1, c2) VALUES (1, 100.0, 'X'), (2, -200.0, 'Y'), (3, 0.0, 'X'), (4, 300.0, 'Z'), (5, -400.0, 'Y'); SELECT c0, c1, c2, LAG(c1) OVER (PARTITION BY CASE WHEN c2 IN ('X', 'Y') THEN 'Group1' ELSE 'Group2' END ORDER BY c1 DESC) AS lag_dynamic_partition FROM t0;

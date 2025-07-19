@@ -1,0 +1,10 @@
+SELECT employee_id,salary,NTILE(4) OVER(ORDER BY salary) AS quartile FROM employees;
+SELECT department,NTILE(10) OVER(PARTITION BY department ORDER BY salary) AS decile_by_department FROM employees;
+SELECT employee_id,bonus,NTILE(5) OVER(ORDER BY bonus DESC) AS quintile_bonus FROM employees;
+SELECT department,NTILE(3) OVER(PARTITION BY region ORDER BY sales_amount DESC) AS tercile_by_region FROM sales;
+SELECT product_id,price,NTILE(8) OVER(PARTITION BY category ORDER BY price ASC) AS octile_price_category FROM products;
+SELECT department,NTILE(6) OVER(PARTITION BY department ORDER BY years_of_experience DESC) AS sextile_experience_by_department FROM employees;
+SELECT student_id,score,NTILE(4) OVER(PARTITION BY class ORDER BY score ASC) AS quartile_score_class FROM exam_scores;
+SELECT customer_id,order_total,NTILE(10) OVER(PARTITION BY customer_id ORDER BY order_date DESC) AS decile_order_total_customer FROM orders;
+SELECT department,NTILE(7) OVER(PARTITION BY department ORDER BY performance_rating ASC) AS septile_performance_rating FROM employee_reviews;
+SELECT project_id,project_duration,NTILE(5) OVER(ORDER BY project_duration DESC) AS quintile_project_duration FROM projects;

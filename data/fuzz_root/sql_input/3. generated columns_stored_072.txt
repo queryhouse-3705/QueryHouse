@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (RTRIM('error_' || c0)) STORED); INSERT INTO t0 (c0) VALUES ('log'), ('info'), ('debug'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'log'; SELECT c1 FROM t0 WHERE c0 = 'debug';

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (RTRIM('debug_' || c0)) VIRTUAL); INSERT INTO t0 (c0) VALUES ('error1'), ('error2'), ('error3'); INSERT INTO t0 (c0) VALUES ('info1'), ('info2'), ('info3'); INSERT INTO t0 (c0) VALUES ('debug1'), ('debug2'), ('debug3'); SELECT * FROM t0; SELECT c0, c1 FROM t0 WHERE c1 LIKE 'debug_%'; SELECT c1 FROM t0 WHERE c0 = 'info1';

@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(30), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (2, 'v0', 1.01), (4, 'v1', -1.02), (-8, 'v2', 2.03); SELECT c1, c2 * c0 + (CASE WHEN c2 < 0 THEN c0 / 2 ELSE c0 * 2 END) AS dynamic_calc FROM t0;

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 JSON); CREATE TABLE t1 (i0 INTEGER, i1 TEXT); INSERT INTO t0 (c0, c1) VALUES ('v0 search', '{"data":"example"}'), ('v1 query', '{"data":"test"}'); INSERT INTO t1 (i0, i1) VALUES (1, 'example'), (2, 'query'); SELECT t0.c0, RANK() OVER (ORDER BY t0.c0) FROM t0 INNER JOIN t1 ON t1.i0 = 1 WHERE t0.c0 LIKE '%search%';

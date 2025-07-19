@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 TEXT, c1 INTEGER); CREATE TABLE t2 (c0 TEXT, c1 INTEGER, c2 TEXT); INSERT INTO t1 (c0, c1) VALUES ('v0', 20), ('v1', 30); INSERT INTO t2 (c0, c1, c2) VALUES ('v0', 20, 'mapped_value'); WITH t0 AS (SELECT t1.c0, t1.c1, (SELECT c2 FROM t2 WHERE t2.c0 = t1.c0) AS mapped_val FROM t1) SELECT * FROM t0 WHERE NOT mapped_val IS NULL;

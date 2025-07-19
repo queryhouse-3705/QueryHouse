@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 FLOAT); CREATE TABLE t1 (c0 INT, c2 FLOAT); INSERT INTO t0 (c0, c1) VALUES (1, -50.5), (2, 60.5), (3, -70.75); INSERT INTO t1 (c0, c2) VALUES (1, 999.99), (2, -888.88), (3, 777.77); SELECT t0.c0, t0.c1, AVG(t0.c1 + t1.c2) OVER() AS avg_combined FROM t0 JOIN t1 ON t0.c0 = t1.c0;

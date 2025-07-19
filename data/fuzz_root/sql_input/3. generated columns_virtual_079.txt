@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (RTRIM(UPPER('PREFIX_' || REPLACE(c0, ' ', '_')))) VIRTUAL); INSERT INTO t0 (c0) VALUES ('hello world'), ('data entry'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 LIKE '%hello%'; SELECT c1 FROM t0 WHERE c0 = 'data entry';

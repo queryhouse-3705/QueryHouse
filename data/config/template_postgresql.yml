@@ -1,0 +1,12 @@
+---
+required: ["init_lib", "data_lib", "db", "passwd", "user_name", "host", "db_name", "startup_cmd"]
+should_exist: ["init_lib", "data_lib"]
+init_lib: ${REPO_ROOT}/data/fuzz_root/pqsql_init_lib
+data_lib: ${REPO_ROOT}/data/fuzz_root/pqsql_data_lib
+db: postgresql
+passwd: ''
+user_name: ${USER}
+db_name: postgres
+host: localhost
+port: ${PG_PORT}
+startup_cmd: "${PG_ROOT}/bin/pg_ctl start -D ${PG_ROOT}/data -l ${PG_LOG}"

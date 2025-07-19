@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 FLOAT, c1 INTEGER, c2 VARCHAR(10)); INSERT INTO t0 (c0, c1, c2) VALUES (1.5, -100, 'v0'), (-2.3, 0, 'v1'), (3.14, 100, 'v2'); SELECT c0, c1, LEAD(c0, 1, NULL) OVER (PARTITION BY c1 ORDER BY c2) AS lead_value FROM t0;

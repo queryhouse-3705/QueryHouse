@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT); INSERT INTO t0 (c0, c1) VALUES ('A,B,C', 'Group1'), ('B,C,D', 'Group2'), ('A,C,E', 'Group1'); SELECT c1, LENGTH(c0) - LENGTH(REPLACE(c0, ',', '')) + 1 AS array_size, COUNT(*) OVER (PARTITION BY c1) AS group_count FROM t0;

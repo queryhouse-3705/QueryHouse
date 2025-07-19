@@ -1,0 +1,16 @@
+---
+required: ["init_lib", "db", "db_path", "startup_cmd"]
+should_exist: ["init_lib", "pragma"]
+init_lib: ${REPO_ROOT}/data/fuzz_root/init_lib
+pragma: ${REPO_ROOT}/data/fuzz_root/pragma
+db: sqlite
+db_prefix: ${LOG_DIR}/database
+db_path: ${LOG_DIR}/database.db
+host: ""
+port: ""
+user_name: ""
+passwd: ""
+startup_cmd: ""
+keyword_coverage:
+  keyword_path: ${REPO_ROOT}/data/fuzz_root/keyword
+  log_path: ${LOG_DIR}/kwcov.log

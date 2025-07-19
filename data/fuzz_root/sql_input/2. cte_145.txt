@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 TEXT, c1 INTEGER); INSERT INTO t1 (c0, c1) VALUES ('v0', 10), ('v1', 20); WITH t0 AS (SELECT c0 AS "field1", c1 AS "field2" FROM t1) SELECT "field1" FROM t0 WHERE "field2" > 10;

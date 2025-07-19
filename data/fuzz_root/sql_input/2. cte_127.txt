@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c1 TEXT); INSERT INTO t1 (c1) VALUES ('v0'), ('v1'); WITH t0 AS (SELECT 'v0' AS c1 UNION ALL SELECT 'v1') SELECT c1 AS c0, 'constant_value' FROM t0;

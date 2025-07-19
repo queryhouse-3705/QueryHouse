@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 VARCHAR(10), c3 INTEGER); INSERT INTO t0 (c0, c1, c2, c3) VALUES (1, 10.0, 'GroupA', 1), (2, -20.0, 'GroupB', 2), (3, 30.0, 'GroupA', 3), (4, -40.0, 'GroupC', 4), (5, 50.0, 'GroupB', 5); SELECT c0, c1, c2, c3, LEAD(c1 || '-' || c3) OVER (PARTITION BY c2 ORDER BY c3 ASC) AS lead_dynamic_merge FROM t0;

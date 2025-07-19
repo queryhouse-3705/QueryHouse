@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 TEXT, c3 TEXT); INSERT INTO t0 (c1, c2, c3) VALUES (1, 'apple', 'fruit'), (2, 'apple', 'company'), (3, 'orange', 'fruit'); SELECT c2, c3 FROM t0 WHERE c2 = 'apple'; SELECT c1 FROM t0 WHERE c3 = 'fruit';

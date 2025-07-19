@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(15), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (-99, 'v0', 1.99), (0, 'v1', 2.00), (99, 'v2', 2.01); SELECT c2 - c0 AS difference FROM t0 WHERE c2 >= 2;

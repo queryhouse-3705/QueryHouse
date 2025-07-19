@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 JSON); INSERT INTO t0 (c0) VALUES ('{"k0": [1, 2, 3]}'), ('{"k0": [4, 5]}'); SELECT c0 -> '$.k0[10]' FROM t0;

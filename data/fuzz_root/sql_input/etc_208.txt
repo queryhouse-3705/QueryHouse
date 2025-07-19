@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (i0 INTEGER, c0 TEXT, json_col JSON); INSERT INTO t0 (i0, c0, json_col) VALUES (1, 'v0', '{"nested": {"key": "value1"}}'), (2, 'v1', '{"nested": {"key": "value2"}}'); SELECT i0, json_col -> '$.nested.key' AS key_value FROM t0 WHERE c0 LIKE '%v1%';

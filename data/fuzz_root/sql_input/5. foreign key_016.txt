@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 TEXT, c3 FLOAT); INSERT INTO t0 (c1, c2, c3) VALUES (123, 'abc_def', 1.23), (456, 'ghi-jkl', 4.56), (789, 'mnop/qr', 7.89); SELECT c1, c3 FROM t0 WHERE c2 LIKE '%_%'; SELECT c2 FROM t0 WHERE c3 > 5.0;

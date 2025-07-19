@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (RTRIM(NULL || '_suffix')) VIRTUAL); INSERT INTO t0 (c0) VALUES ('hello'), ('world'), ('foo'); INSERT INTO t0 (c0) VALUES ('bar'), ('baz'), ('test'); INSERT INTO t0 (c0) VALUES ('string'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'hello'; SELECT c0, c1 FROM t0 WHERE c1 = '_suffix';

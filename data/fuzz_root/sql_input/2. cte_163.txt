@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 TEXT); INSERT INTO t1 (c0) VALUES ('constant_value'); WITH t0 AS (SELECT 'constant_value' AS c0) SELECT c0 FROM t0;

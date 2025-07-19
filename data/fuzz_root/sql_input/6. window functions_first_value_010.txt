@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 INTEGER); INSERT INTO t0 (c0, c1, c2) VALUES (1, 10.0, 5), (2, -5.0, 3), (3, 20.0, 8), (4, 15.0, 10), (5, 0.0, 7); SELECT c0, c1, c2, FIRST_VALUE(c2) OVER (ORDER BY c2 DESC) AS first_val FROM t0;

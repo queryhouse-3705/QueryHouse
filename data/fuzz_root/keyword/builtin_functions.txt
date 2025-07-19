@@ -1,0 +1,16 @@
+AVG
+MAX
+MIN
+SUM
+COUNT
+CUME_DIST    
+DENSE_RANK   
+PERCENT_RANK 
+RANK         
+ROW_NUMBER   
+LAG          
+LEAD         
+NTILE        
+FIRST_VALUE  
+LAST_VALUE   
+NTH_VALUE

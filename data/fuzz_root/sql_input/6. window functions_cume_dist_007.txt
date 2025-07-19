@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 FLOAT); INSERT INTO t0 (c0, c1) VALUES (1, -1000.0), (2, 0.0), (3, 1000.0), (4, -500.0); SELECT c0, c1, CUME_DIST() OVER (ORDER BY ABS(c1)) AS abs_value_distribution FROM t0;

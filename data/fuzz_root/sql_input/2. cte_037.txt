@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 TEXT, c1 INTEGER); CREATE TABLE t2 (c0 TEXT, c1 INTEGER, c2 TEXT); INSERT INTO t1 (c0, c1) VALUES ('v0', 10), ('v1', 20), ('v2', 30); INSERT INTO t2 (c0, c1, c2) VALUES ('v0', 20, 'mapped1'), ('v1', 40, 'mapped2'); WITH t0 AS (SELECT c0, c1 * 2 AS double_val FROM t1) SELECT c0 FROM t0 WHERE double_val IN (SELECT c1 FROM t2);

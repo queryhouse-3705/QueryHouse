@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 DOUBLE, c2 TEXT); INSERT INTO t0 VALUES (10, -12345.6789, 'v0_large_neg'), (20, 12345.6789, 'v1_large'), (30, -0.12345, 'v2_small_neg'), (40, 0.12345, 'v3_small'), (50, 0.0, 'v4_zero'); SELECT c0, c1, NTILE(5) OVER (PARTITION BY MOD(c0, 10) + LENGTH(c2) ORDER BY CEIL(c1) * POWER(c1, 2)) AS ntile_rank FROM t0;

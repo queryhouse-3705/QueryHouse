@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 VARCHAR(50)); CREATE TABLE t1 (c0 INT, c1 FLOAT); INSERT INTO t0 (c0, c1) VALUES (1, 'Alpha'), (2, 'Beta'), (3, 'Gamma'); INSERT INTO t1 (c0, c1) VALUES (1, 1.1), (2, -2.2), (4, 3.3); SELECT COUNT(t0.c0) AS t0_count, COUNT(t1.c0) AS t1_count FROM t0, t1;

@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 TEXT); INSERT INTO t0 VALUES (1, 100.5, 'v0_1'), (2, 200.6, 'v1_2'), (3, -300.7, 'v2_3'), (4, 400.8, 'v3_4'), (5, -500.9, 'v4_5'); SELECT c0, c1, NTILE(2) OVER (ORDER BY CEIL(c1), LENGTH(c2) DESC) AS ntile_rank FROM t0;

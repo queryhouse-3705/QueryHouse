@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 VARCHAR(10)); INSERT INTO t0 (c0, c1, c2) VALUES (10, 3.14, 'v0'), (20, 3.14, 'v1'), (30, 1.61, 'v2'), (40, 2.71, 'v3'), (50, 2.71, 'v4'); SELECT c0, c1, c2, RANK() OVER (PARTITION BY CASE WHEN c1 > 2 THEN 'high' ELSE 'low' END ORDER BY c2 DESC) AS rank_value FROM t0;

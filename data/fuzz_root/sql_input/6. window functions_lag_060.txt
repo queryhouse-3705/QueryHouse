@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 VARCHAR(10), c3 INTEGER); INSERT INTO t0 (c0, c1, c2, c3) VALUES (1, 10.0, 'X', 1), (2, -20.0, 'Y', 2), (3, 30.0, 'X', 1), (4, -40.0, 'Y', 3), (5, 50.0, 'Z', 2); SELECT c0, c1, c2, c3, LAG(c1) OVER (PARTITION BY c2, MOD(c3, 2) ORDER BY c1 ASC) AS lag_multidimensional_partition FROM t0;

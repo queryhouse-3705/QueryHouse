@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 VARCHAR(50)); CREATE TABLE t1 (c0 INT, c1 INT); INSERT INTO t0 (c0, c1) VALUES (1, 'Alpha'), (2, 'Beta'), (3, 'Gamma'); INSERT INTO t1 (c0, c1) VALUES (1, 10), (2, 20), (3, 30); SELECT t0.c1, COUNT(*) OVER (PARTITION BY t1.c1 ORDER BY t0.c0 ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS cumulative_group_count FROM t0 JOIN t1 ON t0.c0 = t1.c0;

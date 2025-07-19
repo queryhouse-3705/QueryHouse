@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 JSON); INSERT INTO t1 (c0) VALUES ('{"k0": [1, 2, 3], "k1": [1, 2, 3]}'), ('{"k0": [10, 20, 30], "k1": [10, 20, 30]}'); SELECT c0 -> '$.k1[0]' FROM t1 WHERE c0 -> '$.k1[0]' = '2';

@@ -1,0 +1,10 @@
+SELECT employee_id,salary,DENSE_RANK() OVER(ORDER BY salary DESC) AS dense_rank_salary_desc FROM employees;
+SELECT department,DENSE_RANK() OVER(PARTITION BY department ORDER BY salary) AS dense_rank_by_department FROM employees;
+SELECT employee_id,bonus,DENSE_RANK() OVER(ORDER BY bonus) AS dense_rank_bonus FROM employees;
+SELECT DENSE_RANK() OVER(PARTITION BY region ORDER BY sales_amount DESC) AS dense_rank_sales_region FROM sales;
+SELECT product_id,price,DENSE_RANK() OVER(PARTITION BY category ORDER BY price ASC) AS dense_rank_price_by_category FROM products;
+SELECT department,DENSE_RANK() OVER(PARTITION BY department ORDER BY years_of_experience DESC) AS dense_rank_experience_department FROM employees;
+SELECT student_id,score,DENSE_RANK() OVER(PARTITION BY class ORDER BY score DESC) AS dense_rank_score_class FROM exam_scores;
+SELECT customer_id,order_total,DENSE_RANK() OVER(PARTITION BY customer_id ORDER BY order_total ASC) AS dense_rank_order_total_customer FROM orders;
+SELECT department,DENSE_RANK() OVER(PARTITION BY department ORDER BY performance_rating DESC) AS dense_rank_performance_department FROM employee_reviews;
+SELECT project_id,project_cost,DENSE_RANK() OVER(ORDER BY project_cost DESC) AS dense_rank_project_cost FROM projects;

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 INT); INSERT INTO t0 (c0, c1) VALUES ('X', NULL), ('Y', 10), ('Z', NULL), ('W', 20); SELECT c0, c1, COUNT(*) OVER (PARTITION BY c1 IS NOT NULL ORDER BY c0) AS null_based_count FROM t0;

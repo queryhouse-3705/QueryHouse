@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT, c2 TEXT GENERATED ALWAYS AS (c0 || '-' || c1 || '_suffix') STORED); INSERT INTO t0 (c0, c1) VALUES ('data', 'test'); INSERT INTO t0 (c0, c1) VALUES ('input', 'file'); INSERT INTO t0 (c0, c1) VALUES ('output', 'result'); SELECT * FROM t0; SELECT c2 FROM t0 WHERE c0 = 'data'; SELECT c2 FROM t0 WHERE c1 = 'file';

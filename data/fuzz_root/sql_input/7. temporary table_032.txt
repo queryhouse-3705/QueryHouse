@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(45), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (111, 'v0', 1.11), (222, 'v1', 2.22), (333, 'v2', -3.33); SELECT c1, c2 / COALESCE(NULLIF(c0, 0), 1) AS safe_division FROM t0;

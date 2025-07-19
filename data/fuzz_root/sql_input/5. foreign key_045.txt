@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 TEXT, c3 TEXT); INSERT INTO t0 (c1, c2, c3) VALUES (1, 'row one', 'first row'), (2, 'row two', 'second row'), (3, 'row three', 'third row'); SELECT c2 FROM t0 WHERE c3 LIKE '%first%'; SELECT c3 FROM t0 WHERE c2 LIKE '%two';

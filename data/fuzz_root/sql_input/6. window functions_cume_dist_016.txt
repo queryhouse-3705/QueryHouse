@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 VARCHAR(50), c1 FLOAT, c2 INT); INSERT INTO t0 (c0, c1, c2) VALUES ('ShortText', 1.1, 100000), ('MediumText', -2.2, 2000000), ('VeryLongText', 3.3, -30000), ('ExtraShort', -4.4, 99999999); SELECT c0, c2, CUME_DIST() OVER (PARTITION BY LENGTH(c0) > 5 ORDER BY c2) AS text_numeric_dist FROM t0;

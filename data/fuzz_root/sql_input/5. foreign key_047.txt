@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 TEXT, c3 TEXT); INSERT INTO t0 (c1, c2, c3) VALUES (1, 'key:value', 'json-like'), (2, 'a:b', 'short pair'), (3, 'k:v', 'shortest'); SELECT c1 FROM t0 WHERE c2 LIKE '%:%'; SELECT c3 FROM t0 WHERE c2 LIKE 'k%';

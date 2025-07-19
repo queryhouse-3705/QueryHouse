@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (CASE WHEN c0 = 'special' THEN 'match' ELSE 'no match' END) STORED); INSERT INTO t0 (c0) VALUES ('special'); INSERT INTO t0 (c0) VALUES ('normal'); INSERT INTO t0 (c0) VALUES ('special'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'special'; SELECT c1 FROM t0 WHERE c0 = 'normal';

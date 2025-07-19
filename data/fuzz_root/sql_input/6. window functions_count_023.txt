@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 TEXT); INSERT INTO t0 (c0, c1) VALUES (1, 'Group1'), (2, 'Group2'), (3, 'Group1'), (4, 'Group3'); CREATE TABLE t1 (c0 FLOAT, c1 INT); INSERT INTO t1 (c0, c1) VALUES (1.1, 1), (-2.2, 2), (3.3, 3), (-4.4, 4); SELECT t0.c1 AS group_name, COUNT(*) OVER (PARTITION BY t0.c1 ORDER BY t1.c0) AS group_count FROM t0 JOIN t1 ON t0.c0 = t1.c1;

@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(30), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (2, 'v0', 0.01), (-2, 'v1', 0.04), (4, 'v2', 0.09); SELECT c1, c2 / c0 AS scaling_factor, c0 * c0 AS squared_value FROM t0 WHERE c0 <> 0;

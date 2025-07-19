@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(50), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'v0', -1.1), (0, 'v1', 0.0), (2, 'v2', 2.2); SELECT c1, CASE WHEN MOD(c0, 2) = 0 THEN c2 / c0 ELSE c2 * c0 END AS calculated_value FROM t0;

@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 TEXT); INSERT INTO t1 (c0) VALUES ('v0'), ('v1'), ('v2'); WITH t0 AS (SELECT c0 FROM t1 WHERE c0 = 'v1' OR c0 = 'v2') SELECT c0 FROM t0;

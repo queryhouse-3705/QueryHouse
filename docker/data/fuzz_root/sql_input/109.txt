@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER); INSERT INTO t0 (c0) VALUES (10), (20), (5), (15), (25); SELECT c0, SUM(c0) OVER (ORDER BY c0) AS sum_column FROM t0;

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 VARCHAR(50)); INSERT INTO t0 (c0, c1) VALUES (1, 'X'), (2, 'Y'), (NULL, 'Z'), (4, 'X'); SELECT COUNT(*) AS total_rows, COUNT(c0) AS non_null_rows FROM t0;

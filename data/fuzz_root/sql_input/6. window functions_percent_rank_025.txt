@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 DOUBLE, c2 FLOAT, c3 VARCHAR(5)); INSERT INTO t0(c0, c1, c2, c3) VALUES (1, 10.1, 2.2, 'a'), (2, -20.2, -3.3, 'b'), (3, 30.3, 4.4, 'c'), (4, -40.4, -5.5, 'd'), (5, 50.5, 6.6, 'e'); SELECT c0, c1, c2, c3, PERCENT_RANK() OVER (PARTITION BY c0 % 3 ORDER BY COALESCE(c1 * c2, 0) DESC NULLS LAST) AS rank_percent FROM t0;

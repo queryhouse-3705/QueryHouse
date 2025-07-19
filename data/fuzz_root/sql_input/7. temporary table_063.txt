@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(40), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (0, 'v0', 0.1), (-1, 'v1', 0.2), (2, 'v2', -0.3); SELECT c1, (CASE WHEN c0 = 0 THEN 0 ELSE 1 END) * c2 AS multiplied_flag FROM t0;

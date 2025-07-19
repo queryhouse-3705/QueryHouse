@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 TEXT); INSERT INTO t0 (c0, c1) VALUES (NULL, 'A'), (2, 'B'), (3, 'C'), (NULL, 'D'); SELECT COUNT(*) AS total, COUNT(c0) AS non_null_count, COUNT(c1) AS text_count FROM t0;

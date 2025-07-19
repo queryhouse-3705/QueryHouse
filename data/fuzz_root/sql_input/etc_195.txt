@@ -1,0 +1,1 @@
+CREATE TABLE t0 (i0 INTEGER PRIMARY KEY, c0 TEXT, json_col JSON, gen_col TEXT GENERATED ALWAYS AS (json_col -> '$.field' || '-' || c0) STORED); INSERT INTO t0 (i0, c0, json_col) VALUES (1, 'v0', '{"field": "value1"}'), (2, 'v1', '{"field": "value2"}'); SELECT i0, gen_col FROM t0 WHERE gen_col LIKE '%value1%';

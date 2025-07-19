@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT); INSERT INTO t0(c0, c1) VALUES (1, -0.1), (2, -0.2), (3, -0.3), (4, 0.1), (5, 0.2); SELECT c0, c1, PERCENT_RANK() OVER (ORDER BY POWER(c1, 2) ASC) AS rank_percent FROM t0;

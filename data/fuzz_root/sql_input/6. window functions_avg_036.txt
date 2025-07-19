@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 FLOAT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 10, 2), (2, 20, 3), (3, 30, 5), (4, 40, 10); SELECT c0, c1, c2, SUM(c1 * c2) OVER() / SUM(c2) OVER() AS avg_column_weighted FROM t0;

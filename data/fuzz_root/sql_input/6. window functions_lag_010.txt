@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT); INSERT INTO t0 (c0, c1) VALUES (1, 10.0), (2, -10.0), (3, 20.0), (4, -20.0), (5, 0.0); SELECT c0, c1, LAG(c1) OVER (ORDER BY CASE WHEN c1 > 0 THEN c1 ELSE -c1 END) AS lag_abs_sign FROM t0;

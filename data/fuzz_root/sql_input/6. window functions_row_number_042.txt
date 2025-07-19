@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 TEXT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'alpha', 0.5), (2, 'beta', 1.5), (3, 'gamma', 2.5), (1, 'delta', 3.5); SELECT c0, c1, c2, ROW_NUMBER() OVER (PARTITION BY c2 / 2 ORDER BY c1 DESC, c0 ASC) AS rn FROM t0;

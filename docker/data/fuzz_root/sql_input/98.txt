@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 TEXT); INSERT INTO t0 (c0, c1) VALUES (10, NULL), (20, 'text'), (5, NULL), (15, 'example'), (25, NULL); SELECT c0, c1, MIN(c0) FILTER (WHERE c1 IS NULL) OVER (ORDER BY c0) AS min_is_null_filtered FROM t0;

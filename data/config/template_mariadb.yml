@@ -1,0 +1,22 @@
+---
+required:
+    [
+        "init_lib",
+        "data_lib",
+        "db",
+        "passwd",
+        "user_name",
+        "host",
+        "sock_path",
+        "db_prefix",
+        "startup_cmd",
+    ]
+should_exist: ["init_lib", "data_lib"]
+db: mariadb
+passwd: ""
+user_name: ${USER}
+host: localhost
+sock_path: /usr/local/mariadb/data/mariadb.sock
+db_prefix: test
+# It is important that the command should run on background
+startup_cmd: "/usr/local/mariadb/bin/mariadbd --basedir=/usr/local/mariadb --datadir=/usr/local/mariadb/data --log-error=maria_err_log.err --pid-file=maria_server_pid.pid --socket=/usr/local/mariadb/data/mariadb.sock --port=3007 &"

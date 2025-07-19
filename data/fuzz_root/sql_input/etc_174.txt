@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 TEXT, c2 VARCHAR(50)); CREATE TABLE t1 (c0 INTEGER, c1 TEXT, c2 VARCHAR(50)); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'v1', 'v2'), (2, 'v4', 'v5'); INSERT INTO t1 (c0, c1, c2) VALUES (3, 'v6', 'v2'), (4, 'v7', 'v8'); SELECT t0.c0, t1.c1 FROM t0 LEFT JOIN t1 ON t0.c2 = t1.c2 WHERE t0.c1 = 'v9';

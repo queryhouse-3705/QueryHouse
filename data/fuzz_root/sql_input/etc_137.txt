@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 TEXT, c2 DOUBLE); CREATE TABLE t1 (c0 INTEGER, c1 JSON, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'v1', 2.5), (2, 'v4', 3.5); INSERT INTO t1 (c0, c1, c2) VALUES (1, '{"key": "value"}', 1.5), (2, '{"key": "test"}', 2.5); SELECT * FROM t0; SELECT c0, c1 FROM t1; SELECT t0.c0, t1.c2 FROM t0 INNER JOIN t1 ON t0.c0 = t1.c0;

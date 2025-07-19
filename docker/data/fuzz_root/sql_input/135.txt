@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 TEXT, c2 INTEGER); INSERT INTO t0 (c0, c1, c2) VALUES (10, 'pattern1', 5), (20, 'test', 8), (5, 'pattern2', 3), (15, 'example', 12), (25, 'pattern3', 7); SELECT c0, c1, c2, SUM(c0) FILTER (WHERE c1 LIKE 'pattern%' AND c2 BETWEEN 1 AND 10) OVER (ORDER BY c0) AS sum_like_between_filtered FROM t0;

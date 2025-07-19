@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 TEXT); CREATE TABLE t2 (c0 TEXT, c1 INTEGER); INSERT INTO t1 (c0) VALUES ('v0'), ('v1'); INSERT INTO t2 (c0, c1) VALUES ('v0', 10), ('v1', 20); WITH t0 AS (SELECT t1.c0, (SELECT t2.c1 FROM t2 WHERE t2.c0 = t1.c0) AS sub_col FROM t1) SELECT t0.c0, t0.sub_col FROM t0;

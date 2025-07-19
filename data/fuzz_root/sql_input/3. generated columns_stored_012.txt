@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS ('prefix_' || c0 || '_suffix') STORED); INSERT INTO t0 (c0) VALUES ('data'); INSERT INTO t0 (c0) VALUES ('test'); INSERT INTO t0 (c0) VALUES ('example'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'data'; SELECT c1 FROM t0 WHERE c0 = 'test';

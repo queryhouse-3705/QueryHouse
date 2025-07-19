@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 VARCHAR(50), c3 VARCHAR(50)); INSERT INTO t0 (c1, c2, c3) VALUES (10, 'hello', 'world'), (20, 'hello', 'World'), (30, 'Hello', 'world'); SELECT c1 FROM t0 WHERE c2 = 'hello' AND c3 = 'world'; SELECT c2, c3 FROM t0 WHERE LOWER(c2) = LOWER(c3);

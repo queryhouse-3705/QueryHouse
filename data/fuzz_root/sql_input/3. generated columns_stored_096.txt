@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (RTRIM(LOWER(c0)) || '_cleaned') STORED); INSERT INTO t0 (c0) VALUES (' Test '); INSERT INTO t0 (c0) VALUES ('hello '); INSERT INTO t0 (c0) VALUES ('  world '); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = ' Test '; SELECT c1 FROM t0 WHERE c0 = 'hello ';

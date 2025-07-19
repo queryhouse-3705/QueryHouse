@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 FLOAT); INSERT INTO t0 (c0, c1) VALUES (1, -10.5), (2, 0), (3, 20.25), (4, 999999.99); SELECT c0, c1, AVG(c1) OVER() AS avg_all FROM t0;

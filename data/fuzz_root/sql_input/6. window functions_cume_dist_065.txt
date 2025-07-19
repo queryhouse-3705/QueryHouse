@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 VARCHAR(10), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'A', 10.0), (2, 'B', -5.0), (3, 'A', 0.0), (4, 'C', 100.0), (5, 'B', -50.0); SELECT c0, c1, c2, CUME_DIST() OVER (PARTITION BY c1 ORDER BY c2 ASC) AS dist FROM t0;

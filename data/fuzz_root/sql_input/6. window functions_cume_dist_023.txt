@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 FLOAT, c2 INT, c3 TEXT); INSERT INTO t0 (c0, c1, c2, c3) VALUES (1, 0.1, 100, 'GroupA'), (2, -999.9, 200, 'GroupB'), (3, 12345.678, 100, 'GroupA'), (4, -98765.432, 300, 'GroupC'); SELECT c1, c2, c3, CUME_DIST() OVER (PARTITION BY c3 ORDER BY ABS(c1), c2 DESC) AS large_partition_dist FROM t0;

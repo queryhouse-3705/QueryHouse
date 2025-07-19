@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(100), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (9999, 'v0', 0.9999), (-9999, 'v1', -0.9999), (0, 'v2', 0.0); SELECT CASE WHEN c2 > 0 THEN c0 * c2 ELSE c0 / -c2 END AS conditional_result FROM t0 WHERE c2 <> 0;

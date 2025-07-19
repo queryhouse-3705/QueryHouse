@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 TEXT); INSERT INTO t0 (c0, c1) VALUES (10, 'pattern1'), (20, 'test'), (5, 'pattern2'), (15, 'example'), (25, 'pattern3'); SELECT c0, c1, SUM(c0) FILTER (WHERE c1 LIKE 'pattern%') OVER (ORDER BY c0) AS sum_like_filtered FROM t0;

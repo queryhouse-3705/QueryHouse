@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 TEXT); CREATE TABLE t1(c0 INTEGER, c1 TEXT); INSERT INTO t0 VALUES (10, -0.001, 'v0_neg'), (20, 0.002, 'v1_pos'), (30, -0.003, 'v2_small_neg'), (40, 0.004, 'v3_small_pos'), (50, 0.0, 'v4_zero'); INSERT INTO t1 VALUES (10, 'v0'), (20, 'v1'), (30, 'v2'), (40, 'v3'), (50, 'v4'); SELECT * FROM t0 INNER JOIN t1 ON t0.c0 = t1.c0 WHERE t0.c1 < 0;

@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 TEXT, c1 INTEGER); INSERT INTO t1 (c0, c1) VALUES ('v0', 5), ('v1', 10); WITH t0 AS (SELECT ABS(-10) AS abs_val, 'constant' AS c1) SELECT abs_val, c1 FROM t0;

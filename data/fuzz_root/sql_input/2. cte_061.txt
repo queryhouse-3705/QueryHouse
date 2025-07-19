@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 TEXT, c1 INTEGER); INSERT INTO t1 (c0, c1) VALUES ('v0', 20), ('v1', 25); WITH t0 AS (SELECT 'static_value' AS constant_col, c0 FROM t1 WHERE c1 > 15) SELECT * FROM t0;

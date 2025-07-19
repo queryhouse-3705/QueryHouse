@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 VARCHAR(50), c1 VARCHAR(50)); INSERT INTO t0 (c0, c1) VALUES ('Alpha', 'GroupA'), ('Beta', 'GroupB'), ('Gamma', 'GroupA'), ('Delta', 'GroupC'); SELECT c1, LENGTH(c0) AS text_length, COUNT(*) OVER (PARTITION BY LENGTH(c0)) AS length_count FROM t0;

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (i0 INTEGER PRIMARY KEY, c0 TEXT, gen_col TEXT GENERATED ALWAYS AS (c0 || '-gen') STORED); INSERT INTO t0 (i0, c0) VALUES (1, 'v0'), (2, 'v1'); SELECT i0, gen_col FROM t0 WHERE gen_col LIKE '%-gen';

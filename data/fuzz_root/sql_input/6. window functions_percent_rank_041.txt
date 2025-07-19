@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 TEXT, c3 INTEGER, c4 FLOAT); INSERT INTO t0(c0, c1, c2, c3, c4) VALUES (1, 10.1, 'x', 1, 0.1), (2, -20.2, 'y', 2, -0.2), (3, 30.3, 'z', 3, 0.3), (4, -40.4, 'x', 1, -0.4), (5, 50.5, 'y', 2, 0.5); SELECT c0, c1, c2, c3, c4, PERCENT_RANK() OVER (PARTITION BY c3 + LENGTH(c2) % 2 ORDER BY c1 + ABS(c4)) AS rank_percent FROM t0;

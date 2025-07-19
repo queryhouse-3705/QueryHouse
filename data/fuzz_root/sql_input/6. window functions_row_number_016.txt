@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 FLOAT, c1 INTEGER, c2 TEXT); INSERT INTO t0 (c0, c1, c2) VALUES (1.01, 1, 'v0'), (2.02, 2, 'v1'), (3.03, 3, 'v2'), (1.01, 4, 'v3'); SELECT c0, c1, c2, ROW_NUMBER() OVER (PARTITION BY c2 ORDER BY c1 ASC, c0 DESC) AS rn FROM t0;

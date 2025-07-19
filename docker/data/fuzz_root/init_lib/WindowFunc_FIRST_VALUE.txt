@@ -1,0 +1,10 @@
+SELECT employee_id,salary,FIRST_VALUE(salary) OVER(ORDER BY salary DESC) AS highest_salary FROM employees;
+SELECT department,FIRST_VALUE(hire_date) OVER(PARTITION BY department ORDER BY hire_date) AS earliest_hire FROM employees;
+SELECT employee_id,bonus,FIRST_VALUE(bonus) OVER(ORDER BY bonus DESC) AS highest_bonus FROM employees;
+SELECT department,FIRST_VALUE(sales_amount) OVER(PARTITION BY region ORDER BY sales_amount DESC) AS highest_sales_by_region FROM sales;
+SELECT product_id,price,FIRST_VALUE(price) OVER(PARTITION BY category ORDER BY price ASC) AS lowest_price_by_category FROM products;
+SELECT department,FIRST_VALUE(years_of_experience) OVER(PARTITION BY department ORDER BY years_of_experience DESC) AS most_experienced_employee FROM employees;
+SELECT student_id,score,FIRST_VALUE(score) OVER(PARTITION BY class ORDER BY score DESC) AS top_score_in_class FROM exam_scores;
+SELECT customer_id,order_total,FIRST_VALUE(order_total) OVER(PARTITION BY customer_id ORDER BY order_date ASC) AS first_order_total FROM orders;
+SELECT department,FIRST_VALUE(performance_rating) OVER(PARTITION BY department ORDER BY review_date DESC) AS latest_performance_rating FROM employee_reviews;
+SELECT project_id,project_duration,FIRST_VALUE(project_duration) OVER(ORDER BY project_duration DESC) AS longest_project FROM projects;

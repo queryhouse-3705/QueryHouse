@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 DOUBLE, c1 INTEGER, c2 TEXT); INSERT INTO t0 (c0, c1, c2) VALUES (0.1234, 1, 'v0'), (99999.9, -1, 'v1'), (-99999.9, 0, 'v2'); SELECT c1, LEAD(c2, 1, 'default') OVER (PARTITION BY c0 ORDER BY c1 DESC) AS lead_value FROM t0;

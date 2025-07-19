@@ -1,0 +1,10 @@
+SELECT employee_id,salary,LEAD(salary,1) OVER(ORDER BY salary) AS next_salary FROM employees;
+SELECT employee_id,department,LEAD(salary,2) OVER(PARTITION BY department ORDER BY salary DESC) AS salary_two_positions_ahead FROM employees;
+SELECT employee_id,bonus,LEAD(bonus,1,0) OVER(ORDER BY bonus) AS next_bonus FROM employees;
+SELECT department,LEAD(sales_amount,1) OVER(PARTITION BY region ORDER BY sales_date) AS next_sales FROM sales;
+SELECT product_id,price,LEAD(price,1) OVER(PARTITION BY category ORDER BY price ASC) AS next_price_in_category FROM products;
+SELECT department,LEAD(years_of_experience,1) OVER(PARTITION BY department ORDER BY hire_date DESC) AS next_experience_by_department FROM employees;
+SELECT student_id,score,LEAD(score,1,0) OVER(PARTITION BY class ORDER BY exam_date ASC) AS next_score_in_class FROM exam_scores;
+SELECT customer_id,order_total,LEAD(order_total,2) OVER(PARTITION BY customer_id ORDER BY order_date DESC) AS total_two_orders_ahead FROM orders;
+SELECT department,LEAD(performance_rating,1) OVER(PARTITION BY department ORDER BY review_date ASC) AS next_performance_rating_by_department FROM employee_reviews;
+SELECT project_id,project_duration,LEAD(project_duration,1) OVER(ORDER BY project_duration DESC) AS next_project_duration FROM projects;

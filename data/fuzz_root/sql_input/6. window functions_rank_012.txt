@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 FLOAT, c1 FLOAT, c2 VARCHAR(10)); INSERT INTO t0 (c0, c1, c2) VALUES (123.456, 0.1, 'v0'), (789.012, 0.2, 'v1'), (456.789, 0.1, 'v2'), (321.654, -0.2, 'v3'), (987.321, 0.1, 'v4'); SELECT c0, c1, c2, RANK() OVER (PARTITION BY ROUND(c1) ORDER BY c0 DESC) AS rank_value FROM t0;

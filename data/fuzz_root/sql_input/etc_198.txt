@@ -1,0 +1,1 @@
+CREATE TABLE t0 (i0 INTEGER PRIMARY KEY, json_col JSON); CREATE TABLE t1 (i1 INTEGER PRIMARY KEY, t0_id INTEGER, FOREIGN KEY (t0_id) REFERENCES t0 (i0)); INSERT INTO t0 (i0, json_col) VALUES (1, '{"key": "value1"}'), (2, '{"key": "value2"}'); INSERT INTO t1 (i1, t0_id) VALUES (1, 1), (2, 2); SELECT t0.i0, json_col -> '$.key' AS extracted FROM t0 JOIN t1 ON t0.i0 = t1.t0_id;

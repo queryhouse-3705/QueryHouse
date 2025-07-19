@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 FLOAT, c3 VARCHAR(10)); INSERT INTO t0 (c0, c1, c2, c3) VALUES (1, 1.0, 10.0, 'alpha'), (2, -2.0, 20.0, 'beta'), (3, 3.0, 30.0, 'gamma'), (4, -4.0, 40.0, 'delta'), (5, 5.0, 50.0, 'epsilon'); SELECT c0, c1, c2, c3, LEAD(c1 + c2 * LENGTH(c3)) OVER (PARTITION BY c3 ORDER BY c2 ASC) AS lead_multidimensional_calc FROM t0;

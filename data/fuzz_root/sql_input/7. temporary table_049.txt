@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(20), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (2, 'v0', 0.04), (4, 'v1', 0.16), (8, 'v2', 0.64); SELECT DISTINCT c0, LOG2(c0) AS power_of_two FROM t0 WHERE c0 * c2 = 0.08;

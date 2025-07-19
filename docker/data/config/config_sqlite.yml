@@ -1,0 +1,16 @@
+---
+required: ["init_lib", "db", "db_path", "startup_cmd"]
+should_exist: ["init_lib", "pragma"]
+init_lib: /home/fuzz/QueryHouse/data/fuzz_root/init_lib
+pragma: /home/fuzz/QueryHouse/data/fuzz_root/pragma
+db: sqlite
+db_prefix: /tmp/database
+db_path: /tmp/database.db
+host: ""
+port: ""
+user_name: ""
+passwd: ""
+startup_cmd: ""
+keyword_coverage:
+    keyword_path: /home/fuzz/QueryHouse/data/fuzz_root/keyword
+    log_path: /tmp/kwcov.log

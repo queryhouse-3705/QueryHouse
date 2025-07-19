@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 VARCHAR(10)); CREATE TABLE t1(c0 INTEGER, c1 VARCHAR(10)); INSERT INTO t0 VALUES (1, 'v0'), (2, 'v1'), (3, 'v2'); INSERT INTO t1 VALUES (1, 'v1'), (2, 'v2'), (3, 'v3'); SELECT t0.c0, t1.c1 FROM t0, t1 WHERE t0.c1 = t1.c1;

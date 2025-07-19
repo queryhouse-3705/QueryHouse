@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 VARCHAR(10), c3 VARCHAR(10)); INSERT INTO t0 (c0, c1, c2, c3) VALUES (1, 10.0, 'A', 'X'), (2, -5.0, 'A', 'Y'), (3, 0.0, 'B', 'X'), (4, 20.0, 'B', 'Y'), (5, 15.0, 'A', 'X'); SELECT c0, c1, c2, c3, FIRST_VALUE(c1) OVER (PARTITION BY c2, c3 ORDER BY c1 ASC) AS first_val FROM t0;

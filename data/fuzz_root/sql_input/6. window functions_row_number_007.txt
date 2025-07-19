@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 TEXT, c2 DOUBLE); INSERT INTO t0 (c0, c1, c2) VALUES (10, 'v0', 0.01), (20, 'v1', 0.02), (30, 'v2', 0.03), (40, 'v3', 0.04); SELECT c0, c1, c2, ROW_NUMBER() OVER (ORDER BY c0 % 10 DESC, c2 * 100 ASC) AS rn FROM t0;

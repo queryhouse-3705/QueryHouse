@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(100), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (7, 'v0', 2.0), (-7, 'v1', -3.0), (14, 'v2', 4.0); SELECT c1, SIGN(c0) * c2 AS directional_value FROM t0 WHERE SIGN(c2) <> SIGN(c0);

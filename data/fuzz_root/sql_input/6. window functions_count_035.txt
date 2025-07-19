@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT, c2 TEXT); INSERT INTO t0 (c0, c1, c2) VALUES ('A', 'X', 'Type1'), ('B', 'Y', 'Type2'), ('C', 'X', 'Type1'), ('D', 'Z', 'Type3'); SELECT c0, c1, COUNT(*) OVER (PARTITION BY c2 ORDER BY c1) AS text_group_count FROM t0;

@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 FLOAT, c2 TEXT); INSERT INTO t0 VALUES (1, 1.1, 'v0'), (2, 2.2, 'v1'), (3, 3.3, 'v2'), (NULL, NULL, 'v3'), (-1, -1.1, 'v4'); SELECT c0, c1, NTILE(4) OVER (ORDER BY c1 ASC NULLS FIRST) AS ntile_rank FROM t0;

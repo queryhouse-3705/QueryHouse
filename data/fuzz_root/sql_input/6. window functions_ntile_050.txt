@@ -1,0 +1,1 @@
+CREATE TABLE t0(c0 INTEGER, c1 DOUBLE, c2 TEXT); INSERT INTO t0 VALUES (100, 3.14159, 'v0_pi'), (200, -2.71828, 'v1_e'), (300, 1.61803, 'v2_phi'), (400, -1.41421, 'v3_root2'), (500, 0.0, 'v4_zero'); SELECT c0, c1, NTILE(5) OVER (PARTITION BY ROUND(c1) ORDER BY POWER(c1, 2) + LENGTH(c2)) AS ntile_rank FROM t0;

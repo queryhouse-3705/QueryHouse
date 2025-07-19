@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 VARCHAR(50), c3 TEXT); INSERT INTO t0 (c1, c2, c3) VALUES (1, 'url://example.com', 'valid url'), (2, 'no-schema.com', 'missing schema'), (3, 'https://secure.com', 'secure site'); SELECT c1 FROM t0 WHERE c2 LIKE 'https://%'; SELECT c3 FROM t0 WHERE c2 LIKE '%example%';

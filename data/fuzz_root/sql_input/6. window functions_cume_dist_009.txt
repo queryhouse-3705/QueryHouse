@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INT, c1 TEXT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 'GroupA', 10.1), (2, 'GroupA', -20.2), (3, 'GroupB', 30.3), (4, 'GroupC', -40.4); SELECT c1, c2, CUME_DIST() OVER (PARTITION BY c1 ORDER BY c2) AS group_dist, CUME_DIST() OVER (ORDER BY c2) AS overall_dist FROM t0;

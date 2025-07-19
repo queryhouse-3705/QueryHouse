@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c1 INTEGER PRIMARY KEY, c2 TEXT, c3 FLOAT); INSERT INTO t0 (c1, c2, c3) VALUES (1, 'line1\nline2', 1.5), (2, 'tab\tcharacter', 2.5), (3, 'carriage\rreturn', 3.5); SELECT c1 FROM t0 WHERE c2 LIKE '%\n%'; SELECT c2, c3 FROM t0 WHERE c3 < 3.0;

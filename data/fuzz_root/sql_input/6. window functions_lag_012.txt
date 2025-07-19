@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 10.0, 5.0), (2, -20.0, 15.0), (3, 30.0, -10.0), (4, 0.0, 20.0), (5, -15.0, -5.0); SELECT c0, c1, c2, LAG(c1 + c2) OVER (ORDER BY c2 ASC) AS lag_combined, LAG(c1 - c2) OVER (ORDER BY c1 DESC) AS lag_difference FROM t0;

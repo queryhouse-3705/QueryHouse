@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 VARCHAR(10)); INSERT INTO t0 (c0, c1, c2) VALUES (101, 1.01, 'segment1'), (202, -2.02, 'segment2'), (303, 3.03, 'segment1'), (404, -4.04, 'segment3'), (505, 5.05, 'segment2'); SELECT nth_value(c1 / 2, 1) OVER (PARTITION BY c2 ORDER BY c0 ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING) AS adjusted_sum FROM t0;

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (CASE WHEN RTRIM(c0) LIKE '%_' THEN 'underscore_end' ELSE 'no_underscore' END) STORED); INSERT INTO t0 (c0) VALUES ('test_'); INSERT INTO t0 (c0) VALUES ('final'); INSERT INTO t0 (c0) VALUES ('check_'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'test_'; SELECT c1 FROM t0 WHERE c0 = 'final';

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 FLOAT, c1 VARCHAR(255), c2 DOUBLE); INSERT INTO t0 (c0, c1, c2) VALUES (1.1, 'v0', 1.0), (-2.2, 'v1', 0.0), (3.3, 'v2', -1.0); SELECT c1, LEAD(c2, 1, 0.0) OVER (ORDER BY c0 ASC) AS lead_value FROM t0;

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (1, 10.0, 1.0), (2, 20.0, 2.0), (3, 30.0, 3.0), (4, 40.0, 4.0), (5, 50.0, 5.0); SELECT c0, c1, c2, LEAD(c1 + c2 * 2) OVER (ORDER BY c0 DESC) AS lead_transformed_calc FROM t0;

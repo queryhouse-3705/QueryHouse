@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 FLOAT); INSERT INTO t0 (c0) VALUES (-1000.1), (2000.2), (0.0), (999.99), (-999.99); SELECT c0, AVG(c0) OVER() AS avg_no_order FROM t0;

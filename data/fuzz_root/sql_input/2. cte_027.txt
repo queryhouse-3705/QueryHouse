@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 TEXT, c1 INTEGER); INSERT INTO t1 (c0, c1) VALUES ('v0', 15), ('v1', 25); WITH t0 AS (SELECT 'constant_value' AS static_col, t1.c1 FROM t1 WHERE t1.c1 = 15) SELECT t0.static_col, t0.c1 FROM t0;

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 FLOAT, c2 VARCHAR(10)); INSERT INTO t0 (c0, c1, c2) VALUES (1, 5.0, 'A'), (2, -10.0, 'B'), (3, 15.0, 'A'), (4, -20.0, 'C'), (5, 25.0, 'B'); SELECT c0, c1, c2, LEAD(c1 * LENGTH(c2)) OVER (PARTITION BY CASE WHEN c2 = 'A' THEN 'GroupA' ELSE 'GroupOther' END ORDER BY c0 ASC) AS lead_partition_expansion FROM t0;

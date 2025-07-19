@@ -1,0 +1,1 @@
+CREATE TEMPORARY TABLE t0 (c0 INTEGER, c1 VARCHAR(35), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (5, 'v0', -5.5), (-10, 'v1', 10.1), (20, 'v2', -20.2); SELECT c1, ABS(c2) / c0 AS normalized_result FROM t0 WHERE c0 > 0;

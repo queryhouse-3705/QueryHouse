@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 TEXT, c1 INTEGER); CREATE TABLE t2 (c0 TEXT, c1 INTEGER, c2 TEXT); INSERT INTO t1 (c0, c1) VALUES ('vX', 10), ('vY', 20); INSERT INTO t2 (c0, c1, c2) VALUES ('vX', 10, 'A'), ('vY', 20, 'B'); WITH t0 AS (SELECT t1.c0, t2.c2 FROM t1 JOIN t2 ON t1.c1 = t2.c1) SELECT t0.c0, t0.c2 FROM t0 ORDER BY t0.c0;

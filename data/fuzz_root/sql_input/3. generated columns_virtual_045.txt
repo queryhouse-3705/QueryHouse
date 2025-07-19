@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (RTRIM(UPPER(SUBSTRING(c0, 1, 3)))) VIRTUAL); INSERT INTO t0 (c0) VALUES ('apple'), ('banana'), ('avocado'); INSERT INTO t0 (c0) VALUES ('carrot'), ('blueberry'); INSERT INTO t0 (c0) VALUES ('orange'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 LIKE 'a%'; SELECT c0, c1 FROM t0 WHERE c1 = 'APP';

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 INTEGER, c1 VARCHAR(20), c2 FLOAT); INSERT INTO t0 (c0, c1, c2) VALUES (5, 'v0', 12345.67), (10, 'v1', -12345.67), (15, 'v2', 0.0); SELECT c0, c1, LEAD(c0) OVER (ORDER BY c2 DESC) AS lead_value FROM t0;

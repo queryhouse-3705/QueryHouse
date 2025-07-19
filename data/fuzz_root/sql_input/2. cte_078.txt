@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 TEXT, c1 INTEGER); CREATE TABLE t2 (c1 INTEGER, c2 TEXT); INSERT INTO t1 (c0, c1) VALUES ('v0', 10), ('v1', 20); INSERT INTO t2 (c1, c2) VALUES (20, 'exists'), (30, 'non_existent'); WITH t0 AS (SELECT c0 FROM t1 WHERE c1 = (SELECT c1 FROM t2 WHERE c2 = 'non_existent')) SELECT * FROM t0;

@@ -1,0 +1,1 @@
+CREATE TABLE t0 (c0 TEXT, c1 TEXT GENERATED ALWAYS AS (CASE WHEN c0 LIKE '%_final' THEN 'ends_with_final' ELSE 'not_final' END) STORED); INSERT INTO t0 (c0) VALUES ('test_final'), ('data_final'), ('info'); SELECT * FROM t0; SELECT c1 FROM t0 WHERE c0 = 'test_final'; SELECT c1 FROM t0 WHERE c0 = 'info';

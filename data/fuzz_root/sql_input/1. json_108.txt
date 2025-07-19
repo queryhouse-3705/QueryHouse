@@ -1,0 +1,1 @@
+CREATE TABLE t1 (c0 JSON); INSERT INTO t1 (c0) VALUES ('{"k0": [10, null], "k1": [30, 40]}'), ('{"k0": [50, 60], "k1": [70, null]}'); SELECT c0 -> '$.k1[1]' FROM t1 WHERE c0 -> '$.k0[1]' IS NULL;
