@@ -25,7 +25,7 @@ This document tracks bugs and inconsistencies discovered by QueryHouse..
 | ID | DBMSs | Feature | Description |
 | --- | --- | --- | --- |
 | 1 | All | Comparison between textual and numeric data | [🔗](./incon1.md) Some DBMSs allow implicit comparison between strings and numbers, others throw errors. |
-| 2 | All | Rounding in `CAST AS INT` | <!-- [🔗](./incon2.md) --> Behavior of casting floats to integers varies: some truncate, others round. |
+| 2 | All | Behavior of `CAST(... AS INT)` | [🔗](./incon2.md) Behavior of casting to integers varies in terms of rounding, range, and overflow handling. |
 | 3 | All | Return type of division | <!-- [🔗](./incon3.md) --> Integer division returns different types—float or integer—depending on the DBMS. |
 | 4 | MySQL, MariaDB | `FULL JOIN`/`FULL OUTER JOIN` | <!-- [🔗](./incon4.md) --> MySQL does not support `FULL OUTER JOIN` natively unlike other DBMSs. |
 | 5 | MySQL | Precision of `JSON DOUBLE` | <!-- [🔗](./incon5.md) --> `DOUBLE` values in JSON may lose precision when serialized or queried. |
