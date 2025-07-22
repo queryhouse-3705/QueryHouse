@@ -26,9 +26,9 @@ This document tracks bugs and inconsistencies discovered by QueryHouse..
 | --- | --- | --- | --- |
 | 1 | All | Comparison between textual and numeric data | [🔗](./incon1.md) Some DBMSs allow implicit comparison between strings and numbers, others throw errors. |
 | 2 | All | Behavior of `CAST(... AS INT)` | [🔗](./incon2.md) Behavior of casting to integers varies in terms of rounding, range, and overflow handling. |
-| 3 | All | Return type of division | <!-- [🔗](./incon3.md) --> Integer division returns different types—float or integer—depending on the DBMS. |
-| 4 | MySQL, MariaDB | `FULL JOIN`/`FULL OUTER JOIN` | <!-- [🔗](./incon4.md) --> MySQL does not support `FULL OUTER JOIN` natively unlike other DBMSs. |
-| 5 | MySQL | Precision of `JSON DOUBLE` | <!-- [🔗](./incon5.md) --> `DOUBLE` values in JSON may lose precision when serialized or queried. |
+| 3 | All | Return type of division | [🔗](./incon3.md) Integer division returns different types. |
+| 4 | MySQL, MariaDB | `FULL JOIN` / `FULL OUTER JOIN` | [🔗](./incon4.md) Although part of the SQL standard, some systems do not support `FULL [OUTER] JOIN` and omit this in documentation. |
+| 5 | All | Precision of real numbers in `JSON` | [🔗](./incon5.md) Precision for real numbers stored in JSON differs by system and is often underdocumented. |
 | 6 | PostgreSQL, Oracle | Sorting `JSON` | <!-- [🔗](./incon6.md) --> Sorting behavior for `JSON` values varies and may raise errors or return unexpected order. |
 | 7 | MySQL | `LENGTH` on `JSON` types | <!-- [🔗](./incon7.md) --> `LENGTH()` returns byte length of JSON text, not element count, unlike other DBMSs. |
 | 8 | All | Index access on non-array `JSON` data types | <!-- [🔗](./incon8.md) --> Using numeric keys on non-array JSON types is accepted by some DBMSs, but not others. |
