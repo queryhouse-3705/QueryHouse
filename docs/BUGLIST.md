@@ -29,9 +29,10 @@ This document tracks bugs and inconsistencies discovered by QueryHouse..
 | 3 | All | Return type of division | [🔗](./incon3.md) Integer division returns different types. |
 | 4 | MySQL, MariaDB | `FULL JOIN` / `FULL OUTER JOIN` | [🔗](./incon4.md) Although part of the SQL standard, some systems do not support `FULL [OUTER] JOIN` and omit this in documentation. |
 | 5 | All | Precision of real numbers in `JSON` | [🔗](./incon5.md) Precision for real numbers stored in JSON differs by system and is often underdocumented. |
-| 6 | PostgreSQL, Oracle | Sorting `JSON` | <!-- [🔗](./incon6.md) --> Sorting behavior for `JSON` values varies and may raise errors or return unexpected order. |
-| 7 | MySQL | `LENGTH` on `JSON` types | <!-- [🔗](./incon7.md) --> `LENGTH()` returns byte length of JSON text, not element count, unlike other DBMSs. |
-| 8 | All | Index access on non-array `JSON` data types | <!-- [🔗](./incon8.md) --> Using numeric keys on non-array JSON types is accepted by some DBMSs, but not others. |
+| 6 | PostgreSQL, Oracle | Sorting behavior for `JSON` (`ORDER BY`) | [🔗](./incon6.md) Sorting behavior for `JSON` values differs across systems, and documentation is often incomplete. |
+| 7 | All | `LENGTH` on `JSON` data | [🔗](./incon7.md) The `LENGTH` function behaves inconsistently on `JSON` values, with ambiguous or missing documentation in some cases. |
+| 8 | All | Index access on non-array `JSON` data | [🔗](./incon8.md) Behavior differs when applying array selectors to non-array `JSON` values. |
+
 
 
 ## Statistics
